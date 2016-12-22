@@ -1,7 +1,8 @@
 sap.ui.define([
 	'sap/ui/model/json/JSONModel',
+	'sap/m/MessageBox',
 	'sap/ui/Device'
-], function (JSONModel, Device) {
+], function (JSONModel, MessageBox, Device) {
 	"use strict";
 
 	return {
@@ -17,7 +18,7 @@ sap.ui.define([
 			 MessageBox.show("Error Message Goes Here", {
 			 	icon: sIcon,
 				title: "My message box title",
-       		actions: [sap.m.MessageBox.Action.Cancel]
+        		actions: [sap.m.MessageBox.Action.Cancel]
 			 });
 		}
 	};

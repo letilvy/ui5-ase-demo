@@ -1,10 +1,11 @@
 sap.ui.require(
 	[
 		"sap/ui/demo/bulletinboard/model/models",
+		"sap/m/MessageBox",
 		"sap/ui/thirdparty/sinon",
 		"sap/ui/thirdparty/sinon-qunit"
 	],
-	function (models) {
+	function (models, MessageBox) {
 		"use strict";
 
 		QUnit.module("createDeviceModel", {
