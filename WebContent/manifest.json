@@ -10,7 +10,7 @@
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
-		"ach": "CA-UI5-DOC",
+		"ach": "CA-UI5-FST",
 		"dataSources": {
 			"mainService": {
 				"uri": "/here/goes/your/serviceUrl/",
@@ -83,7 +83,13 @@
 					"pattern": "Post/{postId}",
 					"name": "post",
 					"target": "post"
+				},
+				{
+					"pattern": "PostCreate",
+					"name": "postCreate",
+					"target": "postCreate"
 				}
+
 			],
 			"targets": {
 				"worklist": {
@@ -95,8 +101,14 @@
 					"viewName": "Post",
 					"viewId": "post",
 					"viewLevel": 2
+				},
+				"postCreate": {
+					"viewName": "PostCreate",
+					"viewId": "postCreate",
+					"viewLevel": 2
 				}
 			}
+
 		}
 	}
 }
