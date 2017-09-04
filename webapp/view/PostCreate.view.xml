@@ -1,0 +1,33 @@
+<mvc:View controllerName="sap.ui.demo.bulletinboard.controller.PostCreate" 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:semantic="sap.m.semantic">
+	<semantic:FullscreenPage id="page" title="{i18n>postCreateViewTitle}" navButtonPress="onNavBack" showNavButton="true">
+		<semantic:content>
+			<f:SimpleForm id="form_post_create" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="1"
+				columnsL="1" columnsM="1" singleContainerFullSize="false" class="sapUiForceWidthAuto sapUiLargeMarginBeginEnd sapUiLargeMarginTop">
+				<f:content>
+					<Label text="{i18n>postNameLabel}"/>
+					<Input id="input_name" placeholder="{i18n>postNamePlaceholder}"/>
+					<Label text="{i18n>postPriceLabel}"/>
+					<Input id="input_price" placeholder="{i18n>postPricePlaceholder}"/>
+					<Label text="{i18n>postCategoryLabel}"/>
+					<Select id="select_category">
+						<core:Item key="category_bicycles" text="Bicycles"/>
+						<core:Item key="category_sports" text="Sports"/>
+						<core:Item key="category_multimedia" text="Multimedia"/>
+					</Select>
+				</f:content>
+			</f:SimpleForm>
+		</semantic:content>
+		<semantic:saveAction>
+			<semantic:SaveAction id="sa_save" press="onSavePost"/>
+		</semantic:saveAction>
+		<semantic:cancelAction>
+			<semantic:CancelAction id="ca_cancel" press="onCancelPost"/>
+		</semantic:cancelAction>
+	</semantic:FullscreenPage>
+</mvc:View>
