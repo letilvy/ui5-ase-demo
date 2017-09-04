@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Opa tests for Shopping Cart written in Gherkin using a Component</title>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta charset="utf-8">
+
+	<script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-bindingSyntax="complex"
+			data-sap-ui-theme='sap_bluecrystal'
+			data-sap-ui-language="en"
+			data-sap-ui-libs='sap.m'
+			data-sap-ui-animation="false"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{
+				"sap.ui.demo.bulletinboard": "../../",
+				"sap.ui.demo.bulletinboard.test": "../",
+				"sap.ui.demo.bulletinboard.app": "../mockServer"
+			}'>
+	</script>
+
+	<script>
+		jQuery.sap.require("sap.ui.qunit.qunit-css");
+		jQuery.sap.require("sap.ui.thirdparty.qunit");
+		jQuery.sap.require("sap.ui.qunit.qunit-junit");
+		jQuery.sap.require("sap.ui.qunit.qunit-coverage");
+		
+		// we want to be able to load our tests asynchronously - pause QUnit until we loaded everything
+		QUnit.config.autostart = false;
+
+		sap.ui.require([
+			"sap/ui/demo/bulletinboard/localService/mockserver",
+			"sap/ui/test/gherkin/opa5TestHarness",
+			"sap/ui/test/Opa5",
+			// Page Objects
+			"sap/ui/demo/bulletinboard/test/integration/pages/Common",
+			"sap/ui/demo/bulletinboard/test/integration/Steps",
+			"sap/ui/demo/bulletinboard/test/integration/pages/Worklist",
+			"sap/ui/demo/bulletinboard/test/integration/pages/Browser",
+			"sap/ui/demo/bulletinboard/test/integration/pages/Post",
+			"sap/ui/demo/bulletinboard/test/integration/pages/PostCreate"
+		], function (mockserver, opa5TestHarness, Opa5, Common, Steps) {
+			"use strict";
+			Opa5.extendConfig({
+				arrangements : new Common(),
+				viewNamespace : "sap.ui.demo.bulletinboard.view.",
+				autoWait: true
+			});
+	
+			mockserver.init();
+
+			opa5TestHarness.test({
+				featurePath: "sap/ui/demo/bulletinboard/test/integration/Worklist",
+				steps: Steps,
+				generateMissingSteps : true
+			});
+
+			QUnit.start();
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+</body>
+</html>
