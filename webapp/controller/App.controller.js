@@ -6,6 +6,7 @@ sap.ui.define([
 
 		return BaseController.extend("sap.ui.demo.worklist.controller.App", {
 
+			
 			onInit : function () {
 				var oViewModel,
 					fnSetAppNotBusy,
