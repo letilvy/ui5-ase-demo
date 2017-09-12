@@ -1,11 +1,13 @@
-sap.ui.define([
-		"sap/ui/test/opaQunit"
-	], function (opaTest) {
+/*global QUnit*/
+
+sap.ui.require(
+	["sap/ui/test/opaQunit"],
+	function (opaTest) {
 		"use strict";
 
-		QUnit.module("Worklist");
+		QUnit.module("Posts");
 
-		opaTest("Should see the table with all entries", function (Given, When, Then) {
+		opaTest("Should see the table with all Posts", function (Given, When, Then) {
 			// Arrangements
 			Given.iStartMyApp();
 
@@ -13,50 +15,25 @@ sap.ui.define([
 			When.onTheWorklistPage.iLookAtTheScreen();
 
 			// Assertions
-			Then.onTheWorklistPage.theTableShouldHaveAllEntries().
-				and.theTableShouldContainOnlyFormattedUnitNumbers().
+			Then.onTheWorklistPage.theTableShouldHavePagination().
 				and.theTitleShouldDisplayTheTotalAmountOfItems();
 		});
 
-		opaTest("Search for the First object should deliver results that contain the firstObject in the name", function (Given, When, Then) {
+		opaTest("Should be able to load more items", function (Given, When, Then) {
 			//Actions
-			When.onTheWorklistPage.iSearchForTheFirstObject();
+			When.onTheWorklistPage.iPressOnMoreData();
 
 			// Assertions
-			Then.onTheWorklistPage.theTableShowsOnlyObjectsWithTheSearchStringInTheirTitle();
+			Then.onTheWorklistPage.theTableShouldHaveAllEntries();
 		});
 
-
-		opaTest("Entering something that cannot be found into search field and pressing search field's refresh should leave the list as it was", function (Given, When, Then) {
+		opaTest("Should be able to search for items", function (Given, When, Then) {
 			//Actions
-			When.onTheWorklistPage.iTypeSomethingInTheSearchThatCannotBeFoundAndTriggerRefresh();
+			When.onTheWorklistPage.iSearchFor("Bear");
 
 			// Assertions
-			Then.onTheWorklistPage.theTableHasEntries().and.iTeardownMyAppFrame();
-		});
-
-
-		opaTest("Should see the busy indicator on app view while worklist view metadata is loaded", function (Given, When, Then) {
-			// Arrangements
-			Given.iStartMyApp({
-				delay: 5000
-			});
-
-			//Actions
-			When.onTheWorklistPage.iLookAtTheScreen();
-
-			// Assertions
-			Then.onTheAppPage.iShouldSeeTheBusyIndicatorForTheWholeApp();
-		});
-
-		opaTest("Should see the busy indicator on worklist table after metadata is loaded", function (Given, When, Then) {
-			//Actions
-			When.onTheAppPage.iWaitUntilTheAppBusyIndicatorIsGone();
-
-			// Assertions
-			Then.onTheWorklistPage.iShouldSeeTheWorklistTableBusyIndicator().
+			Then.onTheWorklistPage.theTableHasOneItem().
 				and.iTeardownMyAppFrame();
 		});
-
 	}
 );

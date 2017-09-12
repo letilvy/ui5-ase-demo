@@ -1,34 +1,23 @@
 sap.ui.define([
-		"sap/ui/demo/worklist/controller/BaseController",
-		"sap/ui/model/json/JSONModel"
-	], function (BaseController, JSONModel) {
-		"use strict";
+	'sap/ui/demo/bulletinboard/controller/BaseController',
+	'sap/ui/model/json/JSONModel'
+], function (BaseController, JSONModel) {
+	"use strict";
 
-		return BaseController.extend("sap.ui.demo.worklist.controller.App", {
+	return BaseController.extend("sap.ui.demo.bulletinboard.controller.App", {
 
-			onInit : function () {
-				var oViewModel,
-					fnSetAppNotBusy,
-					iOriginalBusyDelay = this.getView().getBusyIndicatorDelay();
-
-				oViewModel = new JSONModel({
-					busy : true,
-					delay : 0
+		onInit: function () {
+			var oViewModel = new JSONModel({
+					busy: true,
+					delay: 0
 				});
-				this.setModel(oViewModel, "appView");
 
-				fnSetAppNotBusy = function() {
-					oViewModel.setProperty("/busy", false);
-					oViewModel.setProperty("/delay", iOriginalBusyDelay);
-				};
+			this.setModel(oViewModel, "appView");
 
-				this.getOwnerComponent().getModel().metadataLoaded().
-					then(fnSetAppNotBusy);
+			this.getOwnerComponent().getModel().metadataLoaded().then(function () {
+				oViewModel.setProperty("/busy", false);
+			});
+		}
+	});
 
-				// apply content density mode to root view
-				this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
-			}
-		});
-
-	}
-);
+});
