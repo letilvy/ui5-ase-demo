@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Opa tests for Shopping Cart written in Gherkin using a Component</title>
+	<title>Opa tests for Bulletin Board written in Gherkin</title>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta charset="utf-8">
 
 	<script id="sap-ui-bootstrap"
 			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 			data-sap-ui-bindingSyntax="complex"
-			data-sap-ui-theme='sap_bluecrystal'
+			data-sap-ui-theme='sap_belize'
 			data-sap-ui-language="en"
 			data-sap-ui-libs='sap.m'
 			data-sap-ui-animation="false"
@@ -35,11 +35,10 @@
 			"sap/ui/test/Opa5",
 			// Page Objects
 			"sap/ui/demo/bulletinboard/test/integration/pages/Common",
-			"sap/ui/demo/bulletinboard/test/integration/Steps",
+			"sap/ui/demo/bulletinboard/test/integration/steps/Steps",
 			"sap/ui/demo/bulletinboard/test/integration/pages/Worklist",
 			"sap/ui/demo/bulletinboard/test/integration/pages/Browser",
-			"sap/ui/demo/bulletinboard/test/integration/pages/Post",
-			"sap/ui/demo/bulletinboard/test/integration/pages/PostCreate"
+			"sap/ui/demo/bulletinboard/test/integration/pages/Post"
 		], function (mockserver, opa5TestHarness, Opa5, Common, Steps) {
 			"use strict";
 			Opa5.extendConfig({
@@ -51,7 +50,7 @@
 			mockserver.init();
 
 			opa5TestHarness.test({
-				featurePath: "sap/ui/demo/bulletinboard/test/integration/Worklist",
+				featurePath: "sap/ui/demo/bulletinboard/test/integration/features/Worklist",
 				steps: Steps,
 				generateMissingSteps : true
 			});

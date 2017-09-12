@@ -26,7 +26,6 @@
 						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
 						<ToolbarSpacer />
 						<SearchField id="searchField" width="auto" search="onFilterPosts" />
-						<Button id="btn_create_post" icon="sap-icon://add" press="onCreatePost" />
 					</Toolbar>
 				</headerToolbar>
 				<columns>

@@ -114,10 +114,6 @@ sap.ui.define([
 			});
 
 		},
-		
-		onCreatePost: function(){
-			this.getRouter().navTo("postCreate");
-		},
 
 		/* =========================================================== */
 		/* internal methods                                            */
