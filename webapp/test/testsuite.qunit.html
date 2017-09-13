@@ -13,7 +13,6 @@
 				var oSuite = new parent.jsUnitTestSuite,
 						sContextPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/") + 1);
 				oSuite.addTestPage(sContextPath + "unit/unitTests.qunit.html");
-				oSuite.addTestPage(sContextPath + "integration/opaTests.qunit.html");
 				return oSuite;
 			}
 		</script>

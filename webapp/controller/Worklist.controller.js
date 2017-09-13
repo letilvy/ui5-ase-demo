@@ -4,8 +4,9 @@ sap.ui.define([
 	'sap/ui/demo/bulletinboard/controller/BaseController',
 	'sap/ui/model/json/JSONModel',
 	'sap/ui/demo/bulletinboard/model/formatter',
-	'sap/ui/demo/bulletinboard/model/FlaggedType'
-], function (BaseController, JSONModel, formatter, FlaggedType) {
+	'sap/ui/demo/bulletinboard/model/FlaggedType',
+	'sap/ui/demo/bulletinboard/model/utils'
+], function (BaseController, JSONModel, formatter, FlaggedType, utils) {
 	"use strict";
 
 	return BaseController.extend("sap.ui.demo.bulletinboard.controller.Worklist", {
@@ -84,6 +85,10 @@ sap.ui.define([
 			this.getRouter().navTo("post", {
 				postId: oEvent.getSource().getBindingContext().getProperty("PostID")
 			});
+		},
+
+		onPressFlaggedBtn: function(oEvent){
+			utils.errorHandler(oEvent.getSource().getBindingContext().getProperty("Price"));
 		},
 
 		/* =========================================================== */

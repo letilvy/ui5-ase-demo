@@ -59,6 +59,7 @@
 									id="flaggedButton"
 									tooltip="{i18n>flaggedTooltip}"
 									icon="sap-icon://flag"
+									press="onPressFlaggedBtn"
 									pressed="{
 										path: 'Flagged',
 										type: '.types.flagged'
