@@ -33,6 +33,8 @@ sap.ui.define([
 						}
 					}.bind(this)
 				});
+			}else{
+				this.myNavBack("worklist");
 			}
 		},
 
