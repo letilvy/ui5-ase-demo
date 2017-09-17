@@ -1,4 +1,3 @@
-
 UIAdaptation_index.html
 changes_preview.js
 sap-ui-cachebuster-info.json
@@ -10,3 +9,4 @@ fioriHtmlRunner.html
 .*/fioriHtmlRunner.html
 visual_ext_index.html
 /webapp/visual_ext_index.html
+/.user.project.json
