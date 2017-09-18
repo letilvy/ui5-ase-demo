@@ -57,6 +57,7 @@
 									}"
 								
 								unit="{Currency}"/>
+							
 							<ToggleButton
 								id="flaggedButton"
 								tooltip="{i18n>flaggedTooltip}"
