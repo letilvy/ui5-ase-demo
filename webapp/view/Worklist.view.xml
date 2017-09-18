@@ -55,10 +55,7 @@
 										path: 'Price',
 										formatter: '.formatter.numberUnit'
 									}"
-								state="{
-										path: 'Price',
-										formatter: '.formatter.priceState'
-									}"
+								
 								unit="{Currency}"/>
 							<ToggleButton
 								id="flaggedButton"
