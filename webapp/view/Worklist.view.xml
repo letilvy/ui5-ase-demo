@@ -42,6 +42,7 @@
 					<ColumnListItem
 						vAlign="Middle"
 						press="onPress">
+						
 						<cells>
 							<ObjectIdentifier
 								title="{Title}"/>
