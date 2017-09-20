@@ -23,9 +23,7 @@
 				updateFinished="onUpdateFinished">
 				<headerToolbar>
 					<Toolbar>
-						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
-						<ToolbarSpacer />
-						<SearchField id="searchField" width="auto" search="onFilterPosts" />
+						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/> 
 					</Toolbar>
 				</headerToolbar>
 				<columns>
