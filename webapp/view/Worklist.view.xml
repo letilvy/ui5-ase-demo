@@ -24,8 +24,6 @@
 				<headerToolbar>
 					<Toolbar>
 						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
-						<ToolbarSpacer />
-						<SearchField id="searchField" width="auto" search="onFilterPosts" />
 					</Toolbar>
 				</headerToolbar>
 				<columns>
@@ -43,7 +41,6 @@
 				<items>
 					<ColumnListItem
 						vAlign="Middle"
-						type="Navigation"
 						press="onPress">
 						<cells>
 							<ObjectIdentifier
@@ -51,10 +48,7 @@
 							<Text
 								text="{Category}"/>
 							<ObjectNumber
-								number="{
-										path: 'Price',
-										formatter: '.formatter.numberUnit'
-									}"
+								number="{Price}"
 								
 								unit="{Currency}"/>
 							<ToggleButton
