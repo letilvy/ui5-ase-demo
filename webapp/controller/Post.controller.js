@@ -1,5 +1,4 @@
-sap.ui.define([
-	// 'sap/ui/demo/bulletinboard/controller/BaseController',
+sap.ui.define([ 
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/demo/bulletinboard/model/formatter",
