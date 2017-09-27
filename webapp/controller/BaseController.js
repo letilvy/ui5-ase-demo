@@ -1,29 +1,20 @@
 /*global history*/
 
 sap.ui.define([
-	'sap/ui/core/mvc/Controller',
-	'sap/ui/core/routing/History'
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/core/routing/History"
 ], function (Controller, History) {
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.bulletinboard.controller.BaseController", {
 
 		/**
-		 * Convenience method for accessing the event bus.
-		 * @public
-		 * @returns {sap.ui.core.EventBus} the event bus for this component
-		 */
-		getEventBus: function () {
-			return this.getOwnerComponent().getEventBus();
-		},
-
-		/**
 		 * Convenience method for accessing the router.
 		 * @public
 		 * @returns {sap.ui.core.routing.Router} the router for this component
 		 */
-		getRouter: function () {
-			return sap.ui.core.UIComponent.getRouterFor(this);
+		getRouter: function () { 
+			
 		},
 
 		/**
@@ -32,8 +23,7 @@ sap.ui.define([
 		 * @param {string} [sName] the model name
 		 * @returns {sap.ui.model.Model} the model instance
 		 */
-		getModel: function (sName) {
-			return this.getView().getModel(sName);
+		getModel: function ( ) { 
 		},
 
 		/**
@@ -53,7 +43,7 @@ sap.ui.define([
 		 * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
 		 */
 		getResourceBundle: function () {
-			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
+			// return this.getOwnerComponent().getModel("i18n").getResourceBundle();
 		},
 
 		/**
@@ -64,18 +54,8 @@ sap.ui.define([
 		 * @param {string} sRoute the name of the route if there is no history entry
 		 * @param {object} mData the parameters of the route, if the route does not need parameters, it may be omitted.
 		 */
-		myNavBack: function (sRoute, mData) {
-			var oHistory = History.getInstance();
-			var sPreviousHash = oHistory.getPreviousHash();
+		myNavBack: function ( ) {
 
-			if (sPreviousHash !== undefined) {
-				// The history contains a previous entry
-				history.go(-1);
-			} else {
-				// Otherwise we go backwards with a forward history
-				var bReplace = true;
-				this.getRouter().navTo(sRoute, mData, bReplace);
-			}
 		}
 
 
