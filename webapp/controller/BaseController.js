@@ -23,7 +23,7 @@ sap.ui.define([
 		 * @param {string} [sName] the model name
 		 * @returns {sap.ui.model.Model} the model instance
 		 */
-		getModel: function ( ) { 
+		getModel: function ( ) {  
 		},
 
 		/**
