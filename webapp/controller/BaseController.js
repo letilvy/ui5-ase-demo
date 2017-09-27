@@ -1,9 +1,8 @@
 /*global history*/
 
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/ui/core/routing/History"
-], function (Controller, History) {
+	"sap/ui/core/mvc/Controller" 
+], function (Controller) {
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.bulletinboard.controller.BaseController", {
