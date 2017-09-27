@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 
 	<script id="sap-ui-bootstrap"
-			src="../../../../../../../../../../resources/sap-ui-core.js"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 			data-sap-ui-resourceroots='{
 			"sap.ui.demo.bulletinboard": "../../",
 			"test.unit": "./"
@@ -20,6 +20,9 @@
 		jQuery.sap.require("sap.ui.qunit.qunit-junit");
 		jQuery.sap.require("sap.ui.qunit.qunit-coverage");
 
+		jQuery.sap.require("sap.ui.thirdparty.sinon"); 
+		jQuery.sap.require("sap.ui.thirdparty.sinon-qunit"); 
+		
 		QUnit.config.autostart = false;
 
 		sap.ui.require(
