@@ -1,74 +1,53 @@
 sap.ui.define([
-	'sap/ui/demo/bulletinboard/controller/BaseController',
-	'sap/ui/model/json/JSONModel',
-	'sap/ui/demo/bulletinboard/model/formatter'
-], function (BaseController, JSONModel, formatter) {
+	// 'sap/ui/demo/bulletinboard/controller/BaseController',
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/demo/bulletinboard/model/formatter",
+	"sap/ui/core/routing/History"
+], function(Controller, JSONModel, formatter, History) {
 	"use strict";
 
-	return BaseController.extend("sap.ui.demo.bulletinboard.controller.Post", {
+	return Controller.extend("sap.ui.demo.bulletinboard.controller.Post", {
 
 		formatter: formatter,
 
-		/* =========================================================== */
-		/* lifecycle methods                                           */
-		/* =========================================================== */
+		onInit: function() {
 
-		/**
-		 * Called when the worklist controller is instantiated.
-		 * @public
-		 */
-		onInit: function () {
-			// Model used to manipulate control states. The chosen values make sure,
-			// detail page is busy indication immediately so there is no break in
-			// between the busy indication for loading the view's meta data
 			var oViewModel = new JSONModel({
-					busy: false
-				});
-
-			this.getRouter().getRoute("post").attachPatternMatched(this._onPostMatched, this);
-			this.setModel(oViewModel, "postView");
+				busy: false
+			});
+ 
+			sap.ui.core.UIComponent.getRouterFor(this).getRoute("post").attachPatternMatched(this._onPostMatched, this);
+			this.getView().setModel(oViewModel, "postView");
 		},
 
-		/* =========================================================== */
-		/* event handlers                                              */
-		/* =========================================================== */
+		onNavBack: function() {
+			// this.myNavBack("worklist");
+			var oHistory = History.getInstance();
+			var sPreviousHash = oHistory.getPreviousHash();
 
-		/**
-		 * Navigates back to the worklist
-		 * @function
-		 */
-		onNavBack: function () {
-			this.myNavBack("worklist");
+			if (sPreviousHash !== undefined) {
+				// The history contains a previous entry
+				history.go(-1);
+			} else {
+				// Otherwise we go backwards with a forward history 
+				sap.ui.core.UIComponent.getRouterFor(this).navTo("worklist", "", true);
+			}
 		},
 
-		/* =========================================================== */
-		/* internal methods                                            */
-		/* =========================================================== */
-
-		/**
-		 * Binds the view to the post path.
-		 *
-		 * @function
-		 * @param {sap.ui.base.Event} oEvent pattern match event in route 'object'
-		 * @private
-		 */
-		_onPostMatched: function (oEvent) {
-			var oViewModel = this.getModel("postView"),
-				oDataModel = this.getModel();
+		_onPostMatched: function(oEvent) {
+			var oViewModel = this.getView().getModel("postView"),
+				oDataModel = this.getView().getModel();
 
 			this.getView().bindElement({
 				path: "/Posts('" + oEvent.getParameter("arguments").postId + "')",
 				events: {
-					dataRequested: function () {
-						oDataModel.metadataLoaded().then(function () {
-							// Busy indicator on view should only be set if metadata is loaded,
-							// otherwise there may be two busy indications next to each other on the
-							// screen. This happens because route matched handler already calls '_bindView'
-							// while metadata is loaded.
+					dataRequested: function() {
+						oDataModel.metadataLoaded().then(function() {
 							oViewModel.setProperty("/busy", true);
 						});
 					},
-					dataReceived: function () {
+					dataReceived: function() {
 						oViewModel.setProperty("/busy", false);
 					}
 				}
