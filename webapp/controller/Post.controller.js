@@ -20,8 +20,7 @@ sap.ui.define([
 			this.getView().setModel(oViewModel, "postView");
 		},
 
-		onNavBack: function() {
-			// this.myNavBack("worklist");
+		onNavBack: function() { 
 			var oHistory = History.getInstance();
 			var sPreviousHash = oHistory.getPreviousHash();
 
