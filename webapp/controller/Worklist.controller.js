@@ -17,7 +17,7 @@ sap.ui.define([
 
 		formatter: formatter,
 
-		onInit: function() {
+		onInit: function() { 
 			var oViewModel,
 				iOriginalBusyDelay,
 				oTable = this.byId("table");
