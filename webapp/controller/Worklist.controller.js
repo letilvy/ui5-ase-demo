@@ -77,15 +77,6 @@ sap.ui.define([
 
 		},
 
-		_updateListItemCount: function(iTotalItems) {
-			var sTitle;
-			// only update the counter if the length is final
-			if (this._oTable.getBinding("items").isLengthFinal()) {
-				sTitle = this.getResourceBundle().getText("worklistTableTitleCount", [iTotalItems]);
-				this.oViewModel.setProperty("/worklistTableTitle", sTitle);
-			}
-		},
-
 		onShareEmailPress: function() {
 			var oViewModel = this.getView().getModel("worklistView");
 			sap.m.URLHelper.triggerEmail(
