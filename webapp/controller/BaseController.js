@@ -9,15 +9,6 @@ sap.ui.define([
 	return Controller.extend("sap.ui.demo.bulletinboard.controller.BaseController", {
 
 		/**
-		 * Convenience method for accessing the event bus.
-		 * @public
-		 * @returns {sap.ui.core.EventBus} the event bus for this component
-		 */
-		getEventBus: function () {
-			return this.getOwnerComponent().getEventBus();
-		},
-
-		/**
 		 * Convenience method for accessing the router.
 		 * @public
 		 * @returns {sap.ui.core.routing.Router} the router for this component
