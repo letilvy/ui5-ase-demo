@@ -12,7 +12,7 @@ sap.ui.define([
 
 		onInit: function() {
 
-			var oViewModel = new JSONModel({
+			var oViewModel = new JSONModel({ 
 				busy: false
 			});
  
