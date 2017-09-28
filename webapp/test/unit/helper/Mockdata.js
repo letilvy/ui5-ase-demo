@@ -1,8 +1,7 @@
 sap.ui.define([
 	"sap/ui/model/resource/ResourceModel",
-	"sap/ui/core/mvc/View",
 	"sap/ui/model/json/JSONModel"
-], function(ResourceModel, View, JSONModel) {
+], function(ResourceModel, JSONModel) {
 	"use strict";
 
 	return {

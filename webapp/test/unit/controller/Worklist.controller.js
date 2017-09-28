@@ -1,13 +1,11 @@
 sap.ui.require([
-	"sap/ui/demo/bulletinboard/controller/Worklist.controller",
-	// "sap/ui/demo/bulletinboard/view/Worklist",
-	"sap/ui/core/mvc/View",
+	"sap/ui/demo/bulletinboard/controller/Worklist.controller", 
 	"test/unit/helper/Mockdata",
 	"sap/ui/base/Event",
 	"sap/m/ListBase"
-], function(WorklistController, /*WorklistView,*/ View, Mockdata, Event, ListBase) {
+], function(WorklistController, Mockdata, Event, ListBase) {
 	"use strict";
-	QUnit.module("WorkList", { 
+	QUnit.module("WorkList", {
 		beforeEach: function() {
 			/* 1. New oController Object for testing */
 			this.oController = new WorklistController();
@@ -44,7 +42,7 @@ sap.ui.require([
 
 		return sWorkListTitle;
 	}
-	
+
 	QUnit.test("Title should be 'Posts (15)' after finishing update when worklist contains 15 items", function(assert) {
 		var sActual = workListTitleTestCase.call(this, 15);
 		var sExpect = "Posts (15)";
@@ -54,7 +52,7 @@ sap.ui.require([
 	QUnit.test("Title should be 'Posts' after finishing update when worklist contains 0 items", function(assert) {
 		var sActual = workListTitleTestCase.call(this, 0);
 		var sExpect = "Posts";
-		assert.strictEqual(sActual, sExpect, "Post (15) displayed as list title");
+		assert.strictEqual(sActual, sExpect, "Posts displayed as list title");
 	});
 
 });
