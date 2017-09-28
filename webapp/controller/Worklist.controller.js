@@ -1,6 +1,6 @@
 /*global history*/
 
-sap.ui.define([ 
+sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/demo/bulletinboard/model/formatter",
@@ -17,7 +17,7 @@ sap.ui.define([
 
 		formatter: formatter,
 
-		onInit: function() { 
+		onInit: function() {
 			var oViewModel,
 				iOriginalBusyDelay,
 				oTable = this.byId("table");
@@ -40,18 +40,15 @@ sap.ui.define([
 		},
 
 		onUpdateFinished: function(oEvent) {
-			// update the worklist's object counter after the table update
-			var sTitle,
-				// oTable = oEvent.getSource(),
-				iTotalItems = oEvent.getParameter("total");
-			// only update the counter if the length is final and
-			// the table is not empty
-			// if (iTotalItems && oTable.getBinding("items").isLengthFinal()) {
-			if (iTotalItems ) {
-				sTitle = this.getResourceBundle().getText("worklistTableTitleCount", [iTotalItems]);
-			} else {
-				sTitle = this.getResourceBundle().getText("worklistTableTitle");
-			}
+			var sTitle;
+			/* Task: 
+					Add count of itmes to the title
+					Now it only shows 'Posts' as worklist title
+				Hint:
+					oEvent already provided a parameter for count of items
+
+			*/
+			sTitle = this.getResourceBundle().getText("worklistTableTitle");
 			this.getView().getModel("worklistView").setProperty("/worklistTableTitle", sTitle);
 		},
 
@@ -89,7 +86,7 @@ sap.ui.define([
 
 		getResourceBundle: function() {
 			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
-		} 
+		}
 
 	});
 
