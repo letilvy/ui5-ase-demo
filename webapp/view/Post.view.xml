@@ -12,13 +12,23 @@
 			showNavButton="true"
 			navButtonPress="onNavBack"
 			title="{i18n>objectTitle}">
+	    <semantic:favoriteAction>
+	        <semantic.FavoriteAction 
+	            pressed="{Favorite}"
+	            press="onPressFavoriteBtn" />
+	    </semantic:favoriteAction>
 		<semantic:content>
 			<ObjectHeader
 				id="objectHeader"
 				title="{Title}"
+				responsive="true"
 				number="{Price}"
-				numberUnit="{Currency}"	
-				>
+				numberUnit="{Currency}">
+			    <markers>
+			        <ObjectMarker
+			            visible="{Favorite}"
+			            type="Favorite" />
+			    </markers>
 			</ObjectHeader>
 			<IconTabBar id="iconTabBar"
 				expanded="{device>/isNoPhone}"

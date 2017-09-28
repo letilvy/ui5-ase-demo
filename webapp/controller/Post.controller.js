@@ -18,6 +18,17 @@ sap.ui.define([
 			this.getRouter().getRoute("post").attachPatternMatched(this._onPostMatched, this);
 		},
 		
+		onPressFavoriteBtn:function(){
+		    this.getView().getModel().submitChanges({
+		        success:function(){
+		            sap.m.MessageToast.show("success");
+		        },
+		        error:function(){
+		            sap.m.MessageBox.error("error");
+		        }
+		    });
+		},
+		
 		onNavBack: function(){
 			this.myNavBack("worklist");
 		},
