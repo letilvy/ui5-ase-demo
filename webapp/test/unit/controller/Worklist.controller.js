@@ -1,21 +1,19 @@
 sap.ui.require([
 	"sap/ui/demo/bulletinboard/controller/Worklist.controller",
+	// "sap/ui/demo/bulletinboard/view/Worklist",
 	"sap/ui/core/mvc/View",
 	"test/unit/helper/Mockdata",
 	"sap/ui/base/Event",
 	"sap/m/ListBase"
-], function(WorklistController, View, Mockdata, Event, ListBase) {
+], function(WorklistController, /*WorklistView,*/ View, Mockdata, Event, ListBase) {
 	"use strict";
-	QUnit.module("WorkList", {
-		// before: function() {
-
-		// },
+	QUnit.module("WorkList", { 
 		beforeEach: function() {
 			/* 1. New oController Object for testing */
 			this.oController = new WorklistController();
 
 			/* 2. Stub getView() for returning mock View object */
-			var oView = Mockdata.getViewObject();
+			var oView = Mockdata.getViewObject("worklistView");
 			sinon.stub(this.oController, "getView").returns(oView);
 
 			/* 3. Stub getI18nModel() */

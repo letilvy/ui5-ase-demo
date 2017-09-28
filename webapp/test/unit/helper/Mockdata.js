@@ -11,11 +11,13 @@ sap.ui.define([
 				bundleName: "sap.ui.demo.bulletinboard.i18n.i18n"
 			});
 		},
-		getViewObject: function() {
-			var oView = new View({
-				viewName: "view"
-			}); 
-			oView.setModel( this.getModelObject("worklistView"), "worklistView" );
+		getViewObject: function(sModelName) {
+			var oModel = this.getModelObject(sModelName);
+			var oView = {
+				getModel: function() {
+					return oModel;
+				}
+			};
 			return oView;
 		},
 		getModelObject: function(sModelName) {
