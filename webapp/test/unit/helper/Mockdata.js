@@ -14,8 +14,7 @@ sap.ui.define([
 		getViewObject: function() {
 			var oView = new View({
 				viewName: "view"
-			});
-			// var oWorklistTableTitleModel = this.getModelObject("worklistView");
+			}); 
 			oView.setModel( this.getModelObject("worklistView"), "worklistView" );
 			return oView;
 		},

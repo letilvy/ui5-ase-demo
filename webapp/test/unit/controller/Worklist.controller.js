@@ -18,7 +18,7 @@ sap.ui.require([
 			var oView = Mockdata.getViewObject();
 			sinon.stub(this.oController, "getView").returns(oView);
 
-			/* 3. Stub getView() for returning mock View object */
+			/* 3. Stub getI18nModel() */
 			var oI18nModel = Mockdata.getI18nModel();
 			sinon.stub(this.oController, "getResourceBundle").returns(oI18nModel.getResourceBundle());
 
