@@ -8,7 +8,8 @@
 	"Contact": "contact.me07@gmail.com",
 	"Currency": "USD",
 	"Price": 81,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":true
   },
   {
 	"PostID": "PostID_2",
@@ -19,7 +20,8 @@
 	"Contact": "soccernerd@hotmail.de",
 	"Currency": "EUR",
 	"Price": 420,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_3",
@@ -30,7 +32,8 @@
 	"Contact": "RogerRoger@gmail.com",
 	"Currency": "USD",
 	"Price": 27,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":true
   },
   {
 	"PostID": "PostID_4",
@@ -41,7 +44,8 @@
 	"Contact": "rainbow.glitter03@gmail.com",
 	"Currency": "USD",
 	"Price": 13,
-	"Flagged": 1
+	"Flagged": 1,
+	"Favorite":true
   },
   {
 	"PostID": "PostID_5",
@@ -52,7 +56,8 @@
 	"Contact": "superpacer@gmail.com",
 	"Currency": "USD",
 	"Price": 121,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_6",
@@ -63,7 +68,8 @@
 	"Contact": "john.doe@gmail.com",
 	"Currency": "USD",
 	"Price": 481,
-	"Flagged": 1
+	"Flagged": 1,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_7",
@@ -74,7 +80,8 @@
 	"Contact": "AGreatDeal@gmail.com",
 	"Currency": "USD",
 	"Price": 63,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_8",
@@ -85,7 +92,8 @@
 	"Contact": "houseofparts@gmail.com",
 	"Currency": "USD",
 	"Price": 28,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_9",
@@ -96,7 +104,8 @@
 	"Contact": "gotIt@gmail.com",
 	"Currency": "USD",
 	"Price": 25,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_10",
@@ -107,7 +116,8 @@
 	"Contact": "MajorRefactoring@gmail.com",
 	"Currency": "USD",
 	"Price": 106,
-	"Flagged": 1
+	"Flagged": 1,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_11",
@@ -118,7 +128,8 @@
 	"Contact": "hopOnTheTrain@gmail.com",
 	"Currency": "USD",
 	"Price": 61,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_12",
@@ -129,7 +140,8 @@
 	"Contact": "abc@gmail.com",
 	"Currency": "USD",
 	"Price": 306,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_13",
@@ -140,7 +152,8 @@
 	"Contact": "player.mike@gmail.com",
 	"Currency": "USD",
 	"Price": 256,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_14",
@@ -151,7 +164,8 @@
 	"Contact": "abc@gmail.com",
 	"Currency": "USD",
 	"Price": 234,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":true
   },
   {
 	"PostID": "PostID_15",
@@ -162,7 +176,8 @@
 	"Contact": "sellTwoPairs@gmail.com",
 	"Currency": "EUR",
 	"Price": 34,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":true
   },
   {
 	"PostID": "PostID_16",
@@ -173,7 +188,8 @@
 	"Contact": "overhaul08@gmail.com",
 	"Currency": "USD",
 	"Price": 60,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":true
   },
   {
 	"PostID": "PostID_17",
@@ -184,7 +200,8 @@
 	"Contact": "james.McGillan@gmail.com",
 	"Currency": "USD",
 	"Price": 3006,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_18",
@@ -195,7 +212,8 @@
 	"Contact": "poollov3r@gmail.com",
 	"Currency": "USD",
 	"Price": 4587,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_19",
@@ -217,7 +235,8 @@
 	"Contact": "james.holden@gmail.com",
 	"Currency": "USD",
 	"Price": 45,
-	"Flagged": 1
+	"Flagged": 1,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_21",
@@ -228,7 +247,8 @@
 	"Contact": "to.felldown@gmail.com",
 	"Currency": "USD",
 	"Price": 23,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_22",
@@ -239,7 +259,8 @@
 	"Contact": "large.one@gmail.com",
 	"Currency": "USD",
 	"Price": 360,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   },
   {
 	"PostID": "PostID_23",
@@ -250,6 +271,7 @@
 	"Contact": "gotboats@gmail.com",
 	"Currency": "USD",
 	"Price": 26263,
-	"Flagged": 0
+	"Flagged": 0,
+	"Favorite":false
   }
 ]

@@ -17,8 +17,11 @@
 				id="objectHeader"
 				title="{Title}"
 				number="{Price}"
+				responsive="true"
 				numberUnit="{Currency}"	
 				>
+			    <!--ObjectMarker
+			    favoriteAction sap.m.semantic.FavoriteAction-->
 			</ObjectHeader>
 			<IconTabBar id="iconTabBar"
 				expanded="{device>/isNoPhone}"

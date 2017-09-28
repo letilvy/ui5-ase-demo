@@ -18,6 +18,10 @@ sap.ui.define([
 			this.getRouter().getRoute("post").attachPatternMatched(this._onPostMatched, this);
 		},
 		
+		onPressFavoriteBtn:function(){
+		    //sap.ui.model.odata.v2.ODataModel submitchanges
+		},
+		
 		onNavBack: function(){
 			this.myNavBack("worklist");
 		},
