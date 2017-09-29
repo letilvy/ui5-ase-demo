@@ -1,8 +1,10 @@
 sap.ui.define([
                'sap/ui/demo/bulletinboard/controller/BaseController',
                'sap/ui/model/json/JSONModel',
-               'sap/ui/demo/bulletinboard/model/formatter'
-	], function(BaseController, JSONModel, formatter){
+               'sap/ui/demo/bulletinboard/model/formatter',
+               "sap/m/MessageToast",
+               "sap/m/MessageBox"
+	], function(BaseController, JSONModel, formatter,MessageToast,MessageBox){
 	
 	"use strict";
 	
@@ -19,12 +21,12 @@ sap.ui.define([
 		},
 		
 		onPressFavoriteBtn:function(){
-		    this.getView().getModel().submitChanges({
+		    this.getModel().submitChanges({
 		        success:function(){
-		            sap.m.MessageToast.show("success");
+		            MessageToast.show("success");
 		        },
 		        error:function(){
-		            sap.m.MessageBox.error("error");
+		            MessageBox.error("error");
 		        }
 		    });
 		},

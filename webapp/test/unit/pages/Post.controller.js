@@ -13,13 +13,10 @@ sap.ui.require(
 		QUnit.module("add and remove favorite",{
 		    beforeEach: function() {
     			this.post = new Post();
-    			this.viewStub = new sap.ui.core.mvc.View({});
-			    sinon.stub(this.post, "getView").returns(this.viewStub);
-			    this.viewStub.setModel(new ODataModel(""));    
+			    sinon.stub(this.post, "getModel").returns(new ODataModel(""));
     		},
     		afterEach: function() {
     			this.post.destroy();
-    			this.viewStub.destroy();
     		}
     	});
 		
