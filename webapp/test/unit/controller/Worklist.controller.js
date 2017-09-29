@@ -1,18 +1,17 @@
 sap.ui.require([
-	"sap/ui/demo/bulletinboard/controller/Worklist.controller", 
+	"sap/ui/demo/bulletinboard/controller/Worklist.controller",
 	"test/unit/helper/Mockdata",
-	"sap/ui/base/Event",
-	"sap/m/ListBase"
-], function(WorklistController, Mockdata, Event, ListBase) {
+	"sap/ui/base/Event"
+], function(WorklistController, Mockdata, Event) {
 	"use strict";
 	QUnit.module("WorkList", {
 		beforeEach: function() {
 			/* 1. New oController Object for testing */
 			this.oController = new WorklistController();
 
-			/* 2. Stub getView() for returning mock View object */
-			var oView = Mockdata.getViewObject("worklistView");
-			sinon.stub(this.oController, "getView").returns(oView);
+			/* 2. Stub getModel() for returning mock model object */
+			var oModel = Mockdata.getModelObject("worklistView");
+			sinon.stub(this.oController, "getModel").returns(oModel);
 
 			/* 3. Stub getI18nModel() */
 			var oI18nModel = Mockdata.getI18nModel();
@@ -21,16 +20,12 @@ sap.ui.require([
 		},
 		afterEach: function() {
 			this.oController.destroy();
-		},
-		after: function() {
-			sinon.stub.restore();
 		}
 	});
 
 	function workListTitleTestCase(iLength) {
 		/* 1. Create oEvent */
-		var oListBase = new ListBase();
-		var oEvent = new Event("updateFinished", oListBase, {
+		var oEvent = new Event("updateFinished", this.stub, {
 			total: iLength
 		});
 
