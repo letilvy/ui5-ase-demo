@@ -42,30 +42,15 @@ sap.ui.define([
 		onUpdateFinished: function(oEvent) {
 			var sTitle;
 			/* Task: 
-					Add count of itmes to the title
+					Add count of itmes to the title, e.g. Posts (23)
+					If no item in the worklist, then still display 'Posts' 
 					Now it only shows 'Posts' as worklist title
 				Hint:
 					oEvent already provided a parameter for count of items
-
 			*/
 			sTitle = this.getResourceBundle().getText("worklistTableTitle");
 			this.getView().getModel("worklistView").setProperty("/worklistTableTitle", sTitle);
-		},
-
-		onFilterPosts: function(oEvent) {
-
-			// build filter array
-			var aFilter = [];
-			var sQuery = oEvent.getParameter("query");
-			if (sQuery) {
-				aFilter.push(new Filter("Title", FilterOperator.Contains, sQuery));
-			}
-
-			// filter binding
-			var oTable = this.getView().byId("table");
-			var oBinding = oTable.getBinding("items");
-			oBinding.filter(aFilter);
-		},
+		}, 
 
 		onPress: function(oEvent) {
 			sap.ui.core.UIComponent.getRouterFor(this).navTo("post", {
