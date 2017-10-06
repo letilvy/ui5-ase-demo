@@ -24,6 +24,11 @@
 				<headerToolbar>
 					<Toolbar>
 						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/> 
+				<ToolbarSpacer />
+				<Button
+					id="explorerButton"
+					icon="sap-icon://explorer"
+					press="onDialogPressed"/>						
 					</Toolbar>
 				</headerToolbar>
 				<columns>
