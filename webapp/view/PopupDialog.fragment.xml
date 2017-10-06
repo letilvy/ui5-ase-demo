@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog id="helloDialog" title="Make a choice">
+		<l:VerticalLayout class="sapUiContentPadding">
+			<Text width="250px" class="sapUiSmallMarginTop"/>
+			<Button text="I love SAPUI5 !" width="250px" press="onSelectUI5" class="sapUiSmallMarginBottom"/>
+			<Button text="I love ABAP !" width="250px" press="onSelectABAP" class="sapUiSmallMarginBottom"/>
+		</l:VerticalLayout>
+	</Dialog>
+</core:FragmentDefinition>
