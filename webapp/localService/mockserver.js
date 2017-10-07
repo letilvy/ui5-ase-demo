@@ -3,10 +3,7 @@ sap.ui.define([
 ], function (MockServer) {
 	"use strict";
 
-	var oMockServer,
-		_sAppModulePath = "sap/ui/demo/bulletinboard/",
-		_sMetadataPath = _sAppModulePath + "localService/metadata",
-		_sJsonFilesModulePath = _sAppModulePath + "localService/mockdata";
+	var oMockServer;
 
 	return {
 		/**
@@ -17,27 +14,18 @@ sap.ui.define([
 		 */
 
 		init : function () {
-			var oUriParameters = jQuery.sap.getUriParameters(),
-				sJsonFilesUrl = jQuery.sap.getModulePath(_sJsonFilesModulePath),
-				sMetadataUrl = jQuery.sap.getModulePath(_sMetadataPath,".xml");
-
+			
+			/*  1. Instanciate a MockServer: oMockServer */  
 			oMockServer = new MockServer({
-				// rootUri : sMockServerUrl
-				rootUri: "/here/goes/your/serviceUrl/"
+				// roolUri is defined in manifest.json file
 			});
-
-			// configure mock server with a delay of 1s
-			MockServer.config({
-				autoRespond : true,
-				autoRespondAfter : (oUriParameters.get("serverDelay") || 1000)
-			});
-
-			oMockServer.simulate(sMetadataUrl, {
-				sMockdataBaseUrl : sJsonFilesUrl,
-				bGenerateMissingMockData : true
-			});
-
-			oMockServer.start();
+				
+			/*  2. configure mock server with a delay of 1s  */
+				// var oUriParameters = jQuery.sap.getUriParameters();
+		
+			/*  3. simulate */  
+			
+			/* 4. start */ 
 
 			jQuery.sap.log.info("Running the app with mock data");
 		}
