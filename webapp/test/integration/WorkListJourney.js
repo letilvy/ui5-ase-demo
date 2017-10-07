@@ -12,7 +12,7 @@ Hint:
 	Assertion for messageToast text could be like this:
 	
 					check: function() {
-						return !!sap.ui.test.Opa5.getJQuery()(".sapMMessageToast").text() === "Hello World";
+						return sap.ui.test.Opa5.getJQuery()(".sapMMessageToast").text() === "Hello World";
 					},
 		
 */
