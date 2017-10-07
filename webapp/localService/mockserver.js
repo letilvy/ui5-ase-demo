@@ -5,6 +5,7 @@ sap.ui.define([
 
 	var oMockServer,
 		_sAppModulePath = "sap/ui/demo/bulletinboard/",
+		_sMetadataPath = _sAppModulePath + "localService/metadata",
 		_sJsonFilesModulePath = _sAppModulePath + "localService/mockdata";
 
 	return {
@@ -18,15 +19,11 @@ sap.ui.define([
 		init : function () {
 			var oUriParameters = jQuery.sap.getUriParameters(),
 				sJsonFilesUrl = jQuery.sap.getModulePath(_sJsonFilesModulePath),
-				sManifestUrl = jQuery.sap.getModulePath(_sAppModulePath + "manifest", ".json"),
-				oManifest = jQuery.sap.syncGetJSON(sManifestUrl).data,
-				oMainDataSource = oManifest["sap.app"].dataSources.mainService,
-				sMetadataUrl = jQuery.sap.getModulePath(_sAppModulePath + oMainDataSource.settings.localUri.replace(".xml", ""), ".xml"),
-				// ensure there is a trailing slash
-				sMockServerUrl = /.*\/$/.test(oMainDataSource.uri) ? oMainDataSource.uri : oMainDataSource.uri + "/";
+				sMetadataUrl = jQuery.sap.getModulePath(_sMetadataPath,".xml");
 
 			oMockServer = new MockServer({
-				rootUri : sMockServerUrl
+				// rootUri : sMockServerUrl
+				rootUri: "/here/goes/your/serviceUrl/"
 			});
 
 			// configure mock server with a delay of 1s
@@ -47,4 +44,3 @@ sap.ui.define([
 	};
 
 });
-
