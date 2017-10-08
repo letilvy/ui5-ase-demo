@@ -17,7 +17,8 @@ sap.ui.require([
 	Opa5.extendConfig({
 		arrangements: new Common(),
 		viewNamespace: "sap.ui.demo.bulletinboard.view.",
-		autoWait: true
+		autoWait: true,
+		visible: true	// if visible is true (it is by default), the controls also need to be rendered
 	});
 
 	sap.ui.require([ 
