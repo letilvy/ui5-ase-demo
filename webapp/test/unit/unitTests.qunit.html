@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 
 	<script id="sap-ui-bootstrap"
-			src="../../../../../../../../../../resources/sap-ui-core.js"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 			data-sap-ui-resourceroots='{
 			"sap.ui.demo.bulletinboard": "../../",
 			"test.unit": "./"
@@ -19,6 +19,10 @@
 		jQuery.sap.require("sap.ui.thirdparty.qunit");
 		jQuery.sap.require("sap.ui.qunit.qunit-junit");
 		jQuery.sap.require("sap.ui.qunit.qunit-coverage");
+		
+		/*if (window.blanket) {
+			window.blanket.options("sap-ui-cover-only", ["sap/ui/demo/bulletinboard"]);
+		}*/
 
 		QUnit.config.autostart = false;
 
