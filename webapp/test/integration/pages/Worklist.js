@@ -42,17 +42,6 @@ sap.ui.require([
 							actions: new Press(),
 							errorMessage: "No list item with the id " + sId + " was found."
 						});
-					},
-
-					iSearchFor: function (sSearchString) {
-						return this.waitFor({
-							id: "searchField",
-							viewName: sViewName,
-							actions: new EnterText({
-								text: sSearchString
-							}),
-							errorMessage: "SearchField was not found."
-						});
 					}
 				},
 				assertions: {
