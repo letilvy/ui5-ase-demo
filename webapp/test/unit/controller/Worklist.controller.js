@@ -38,13 +38,13 @@ sap.ui.require([
 		return sWorkListTitle;
 	}
 
-	QUnit.test("Title should be 'Posts (15)' after finishing update when worklist contains 15 items", function(assert) {
+	QUnit.test("Should title display 'Posts (15)' after finishing update When worklist contains 15 items", function(assert) {
 		var sActual = workListTitleTestCase.call(this, 15);
 		var sExpect = "Posts (15)";
 		assert.strictEqual(sActual, sExpect, "Post (15) displayed as list title");
 	});
 
-	QUnit.test("Title should be 'Posts' after finishing update when worklist contains 0 items", function(assert) {
+	QUnit.test("Should title display 'Posts' after finishing update When worklist contains 0 items", function(assert) {
 		var sActual = workListTitleTestCase.call(this, 0);
 		var sExpect = "Posts";
 		assert.strictEqual(sActual, sExpect, "Posts displayed as list title");
