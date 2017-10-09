@@ -5,8 +5,9 @@ sap.ui.define([
 	'sap/ui/model/json/JSONModel',
 	'sap/ui/demo/bulletinboard/model/formatter',
 	'sap/ui/demo/bulletinboard/model/FlaggedType',
-	'sap/ui/demo/bulletinboard/model/utils'
-], function (BaseController, JSONModel, formatter, FlaggedType, utils) {
+	'sap/ui/demo/bulletinboard/model/utils',
+	"sap/m/MessageToast"
+], function (BaseController, JSONModel, formatter, FlaggedType, utils, MessageToast) {
 	"use strict";
 
 	return BaseController.extend("sap.ui.demo.bulletinboard.controller.Worklist", {
@@ -120,6 +121,32 @@ sap.ui.define([
 				oViewModel.getProperty("/shareSendEmailSubject"),
 				oViewModel.getProperty("/shareSendEmailMessage")
 			);
+		},
+		
+		/**
+		 * Open the Popup dialog
+		 */
+		onDialogPressed: function() {
+			this._getDialog().open();
+		},
+		onSelectUI5: function() {
+			MessageToast.show("SAPUI5");
+			this._getDialog().close();
+		},
+		onSelectABAP: function() {
+			MessageToast.show("ABAP");
+			this._getDialog().close();
+		},
+		/**
+		 * Define and return {sap.ui.xmlfragment}
+		 * @private
+		 */
+		_getDialog: function() {
+			if (!this._oDialog) {
+				this._oDialog = sap.ui.xmlfragment("sap.ui.demo.bulletinboard.view.PopupDialog", this);
+				this.getView().addDependent(this._oDialog);
+			}
+			return this._oDialog;
 		}
 	});
 
