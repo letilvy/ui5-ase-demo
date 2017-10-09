@@ -13,27 +13,9 @@
       "backendSystem": [],
       "_metadata": {
         "runnerId": "webapprunner",
-        "id": 1783103,
+        "id": 163589,
         "displayName": "Run opaTests.qunit.html 1",
-        "lastRunTimeStamp": 1507517012997
-      }
-    },
-    {
-      "filePath": "/webapp/test/unit/unitTests.qunit.html",
-      "previewMode": 1,
-      "dataMode": 1,
-      "workspace": "withoutWorkspace",
-      "ui5ActiveVersion": null,
-      "ui5VerSource": null,
-      "isDefaultVersion": 0,
-      "urlParameters": [],
-      "hashParameter": "",
-      "backendSystem": [],
-      "_metadata": {
-        "runnerId": "webapprunner",
-        "id": 1647064,
-        "displayName": "Run unitTests.qunit.html 1",
-        "lastRunTimeStamp": 1507516105962
+        "lastRunTimeStamp": 1507535560283
       }
     },
     {

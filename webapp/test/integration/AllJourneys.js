@@ -1,5 +1,5 @@
-jQuery.sap.require("sap.ui.qunit.qunit-css");
-jQuery.sap.require("sap.ui.thirdparty.qunit");
+jQuery.sap.require("sap.ui.thirdparty.qunit-2");
+jQuery.sap.require("sap.ui.qunit.qunit-2-css");
 jQuery.sap.require("sap.ui.qunit.qunit-junit");
 QUnit.config.autostart = false;
 
