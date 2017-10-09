@@ -9,7 +9,8 @@
 					<Toolbar>
 						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
 						<ToolbarSpacer/>
-						<Button id="explorerButton" icon="sap-icon://explorer" press="onDialogPressed"/>
+						<Button icon="sap-icon://explorer" press="onDialogPressed" text="Popup a Dialog"/>
+						<Button icon="sap-icon://message-popup" press="onMessageBoxPressed" text="Popup a Message box"/>
 					</Toolbar>
 				</headerToolbar>
 				<columns>

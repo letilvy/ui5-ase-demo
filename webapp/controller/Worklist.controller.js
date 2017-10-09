@@ -7,8 +7,9 @@ sap.ui.define([
 	'sap/ui/demo/bulletinboard/model/FlaggedType',
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"sap/m/MessageToast"
-], function (BaseController, JSONModel, formatter, FlaggedType, Filter, FilterOperator, MessageToast) {
+	"sap/m/MessageToast",
+	"sap/m/MessageBox"
+], function (BaseController, JSONModel, formatter, FlaggedType, Filter, FilterOperator, MessageToast, MessageBox) {
 	"use strict";
 
 	return BaseController.extend("sap.ui.demo.bulletinboard.controller.Worklist", {
@@ -150,6 +151,26 @@ sap.ui.define([
 				this.getView().addDependent(this._oDialog);
 			}
 			return this._oDialog;
+		},
+		/**
+		 * Open the message box
+		 */
+		onMessageBoxPressed: function() {
+			MessageBox.information("Do you like SAPUI5 ? ", {
+				actions: [MessageBox.Action.YES,
+					MessageBox.Action.NO
+				],
+				onClose: function(oAction) {
+					if (oAction === MessageBox.Action.YES) {
+						MessageToast.show("SAPUI5");
+						this._getDialog().close();
+					} else {
+						MessageToast.show("ABAP");
+						this._getDialog().close();
+					}
+				}.bind(this)
+			});
+
 		}
 	});
 
