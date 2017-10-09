@@ -9,16 +9,7 @@ sap.ui.define([
 			return new ResourceModel({
 				bundleName: "sap.ui.demo.bulletinboard.i18n.i18n"
 			});
-		},
-		getViewObject: function(sModelName) {
-			var oModel = this.getModelObject(sModelName);
-			var oView = {
-				getModel: function() {
-					return oModel;
-				}
-			};
-			return oView;
-		},
+		}, 
 		getModelObject: function(sModelName) {
 			switch (sModelName) {
 				case "worklistView":
