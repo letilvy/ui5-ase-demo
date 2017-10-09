@@ -7,12 +7,13 @@ sap.ui.define([
 	"sap/ui/demo/bulletinboard/model/FlaggedType",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"sap/m/MessageToast"
-], function (BaseController, JSONModel, formatter, FlaggedType, Filter, FilterOperator, MessageToast) {
+	"sap/m/MessageToast",
+	'sap/m/MessageBox'
+], function(BaseController, JSONModel, formatter, FlaggedType, Filter, FilterOperator, MessageToast, MessageBox) {
 	"use strict";
 
 	return BaseController.extend("sap.ui.demo.bulletinboard.controller.Worklist", {
-		types : {
+		types: {
 			flagged: new FlaggedType()
 		},
 
@@ -26,7 +27,7 @@ sap.ui.define([
 		 * Called when the worklist controller is instantiated.
 		 * @public
 		 */
-		onInit: function () {
+		onInit: function() {
 			var oViewModel,
 				iOriginalBusyDelay,
 				oTable = this.byId("table");
@@ -48,7 +49,7 @@ sap.ui.define([
 			// Make sure, busy indication is showing immediately so there is no
 			// break after the busy indication for loading the view's meta data is
 			// ended (see promise 'oWhenMetadataIsLoaded' in AppController)
-			oTable.attachEventOnce("updateFinished", function () {
+			oTable.attachEventOnce("updateFinished", function() {
 				// Restore original busy indicator delay for worklist's table
 				oViewModel.setProperty("/tableBusyDelay", iOriginalBusyDelay);
 			});
@@ -68,7 +69,7 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent the update finished event
 		 * @public
 		 */
-		onUpdateFinished: function (oEvent) {
+		onUpdateFinished: function(oEvent) {
 			// update the worklist's object counter after the table update
 			var sTitle,
 				oTable = oEvent.getSource(),
@@ -88,7 +89,7 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent the table selectionChange event
 		 * @public
 		 */
-		onPress: function (oEvent) {
+		onPress: function(oEvent) {
 			this.getRouter().navTo("post", {
 				// The source is the list item that got pressed
 				postId: oEvent.getSource().getBindingContext().getProperty("PostID")
@@ -105,7 +106,7 @@ sap.ui.define([
 		 * @param {int} iTotalItems the total number of items in the table
 		 * @private
 		 */
-		_updateListItemCount: function (iTotalItems) {
+		_updateListItemCount: function(iTotalItems) {
 			var sTitle;
 			// only update the counter if the length is final
 			if (this._oTable.getBinding("items").isLengthFinal()) {
@@ -118,7 +119,7 @@ sap.ui.define([
 		 * Event handler when the share by E-Mail button has been clicked
 		 * @public
 		 */
-		onShareEmailPress: function () {
+		onShareEmailPress: function() {
 			var oViewModel = this.getModel("worklistView");
 			sap.m.URLHelper.triggerEmail(
 				null,
@@ -151,8 +152,27 @@ sap.ui.define([
 				this.getView().addDependent(this._oDialog);
 			}
 			return this._oDialog;
+		},
+		/**
+		 * Open the message box
+		 */
+		onMessageBoxPressed: function() {
+			MessageBox.information("Do you like SAPUI5 ? ", {
+				actions: [MessageBox.Action.YES,
+					MessageBox.Action.NO
+				],
+				onClose: function(oAction) {
+					if (oAction === MessageBox.Action.YES) {
+						MessageToast.show("SAPUI5");
+						this._getDialog().close();
+					} else {
+						MessageToast.show("ABAP");
+						this._getDialog().close();
+					}
+				}.bind(this)
+			});
+
 		}
-		
 	});
 
 });
