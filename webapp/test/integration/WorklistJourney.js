@@ -21,7 +21,7 @@ sap.ui.require(
 			When.onTheWorklistPage.iPressOnMoreData();
 
 			// Assertions
-			Then.onTheWorklistPage.theTableShouldHaveAllEntries();
+			Then.onTheWorklistPage.theTableShouldHaveAllEntries().and.iTeardownMyAppFrame();
 		}); 
 	}
 );
