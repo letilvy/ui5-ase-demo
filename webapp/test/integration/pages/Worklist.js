@@ -75,8 +75,9 @@ sap.ui.require([
 					theDialogShouldDisplayWithTitle: function(sTitle) {
 						return this.waitFor({
 							controlType: "sap.m.Dialog",
-							check: function(oDialog) {
-								return oDialog[0].getProperty("title") === sTitle;
+							matchers: function(oDialog) {
+								// return oDialog[0].getProperty("title") === sTitle;
+								return oDialog.getTitle() === sTitle;
 							},
 							success: function() {
 								// we set the view busy, so we need to query the parent of the app
@@ -87,12 +88,12 @@ sap.ui.require([
 					},
 					theMessageToastShouldDisplayWithText: function(sText) {
 						return this.waitFor({
-							viewName: sViewName,
-							check: function() {
-								return sap.ui.test.Opa5.getJQuery()(".sapMMessageToast").text() === sText;
+							viewName: sViewName,  
+							matchers: function() {
+								return sap.ui.test.Opa5.getJQuery()(".sapMMessageToast").text() === sText; 
 							},
 							success: function() {
-								ok(true, "Find a Toast with text" + sText);
+								Opa5.assert.ok(true, "Find a Toast with text" + sText);
 							},
 							errorMessage: "No Toast message detected!"
 						});
