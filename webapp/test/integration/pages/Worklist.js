@@ -4,14 +4,16 @@ sap.ui.require([
 		'sap/ui/test/matchers/PropertyStrictEquals',
 		'sap/ui/test/matchers/BindingPath',
 		'sap/ui/demo/bulletinboard/test/integration/pages/Common',
-		'sap/ui/test/actions/Press'
+		'sap/ui/test/actions/Press',
+		'sap/ui/test/actions/EnterText'
 	],
-	function(Opa5,
-		AggregationLengthEquals,
-		PropertyStrictEquals,
-		BindingPath,
-		Common,
-		Press) {
+	function (Opa5,
+			  AggregationLengthEquals,
+			  PropertyStrictEquals,
+			  BindingPath,
+			  Common,
+			  Press,
+			  EnterText) {
 		"use strict";
 
 		var sViewName = "Worklist",
@@ -21,11 +23,21 @@ sap.ui.require([
 			onTheWorklistPage: {
 				baseClass: Common,
 				actions: {
-					iPressOnTheItemWithTheID: function(sId) {
+					iPressOnMoreData: function () {
+						// Press action hits the "more" trigger on a table
+						return this.waitFor({
+							id: sTableId,
+							viewName: sViewName,
+							actions: new Press(),
+							errorMessage: "The Table does not have a trigger"
+						});
+					},
+
+					iPressOnTheItemWithTheID: function (sId) {
 						return this.waitFor({
 							controlType: "sap.m.ColumnListItem",
 							viewName: sViewName,
-							matchers: new BindingPath({
+							matchers:  new BindingPath({
 								path: "/Posts('" + sId + "')"
 							}),
 							actions: new Press(),
@@ -33,12 +45,61 @@ sap.ui.require([
 						});
 					} 
 				},
-				assertions: {
-					iShouldSeeTheTable: function() {
+				assertions: { 
+
+					theTableShouldHavePagination: function () {
 						return this.waitFor({
 							id: sTableId,
 							viewName: sViewName,
-							success: function() {
+							matchers: new AggregationLengthEquals({
+								name: "items",
+								length: 20
+							}),
+							success: function () {
+								Opa5.assert.ok(true, "The table has 20 items on the first page");
+							},
+							errorMessage: "Table does not have all entries."
+						});
+					},
+
+					theTableShouldHaveAllEntries: function () {
+						return this.waitFor({
+							id: sTableId,
+							viewName: sViewName,
+							matchers: new AggregationLengthEquals({
+								name: "items",
+								length: 23
+							}),
+							success: function () {
+								Opa5.assert.ok(true, "The table has 23 items");
+							},
+							errorMessage: "The table does not have all entries."
+						});
+					},
+
+					theTitleShouldDisplayTheTotalAmountOfItems: function () {
+						return this.waitFor({
+							id: "tableHeader",
+							viewName: sViewName,
+							matchers: function (oPage) {
+								var sExpectedText = oPage.getModel("i18n").getResourceBundle().getText("worklistTableTitleCount", [23]);
+								return new PropertyStrictEquals({
+									name: "text",
+									value: sExpectedText
+								}).isMatching(oPage);
+							},
+							success: function () {
+								Opa5.assert.ok(true, "The table header has 23 items");
+							},
+							errorMessage: "The Table's header does not container the number of items: 23"
+						});
+					},
+
+					iShouldSeeTheTable: function () {
+						return this.waitFor({
+							id: sTableId,
+							viewName: sViewName,
+							success: function () {
 								Opa5.assert.ok(true, "The table is visible");
 							},
 							errorMessage: "Was not able to see the table."

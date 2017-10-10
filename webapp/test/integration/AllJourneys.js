@@ -22,7 +22,8 @@ sap.ui.require([
 	});
 
 	sap.ui.require([ 
-		"sap/ui/demo/bulletinboard/test/integration/PostJourney" 
+		"sap/ui/demo/bulletinboard/test/integration/WorklistJourney",
+		"sap/ui/demo/bulletinboard/test/integration/PostJourney"
 	], function () {
 		QUnit.start();
 	});
