@@ -32,15 +32,20 @@ sap.ui.require([
 						});
 					},
 
-					iPressOnTheItemWithTheID: function (sId) {
+					iPressOnTheItemWithTheName: function(sName) {
 						return this.waitFor({
 							controlType: "sap.m.ColumnListItem",
 							viewName: sViewName,
-							matchers:  new BindingPath({
-								path: "/Posts('" + sId + "')"
-							}),
+							matchers: function(oItem) {
+								var oObjectIdentifier = oItem.getCells()[0];
+
+								return new PropertyStrictEquals({
+									name: "title",
+									value: sName
+								}).isMatching(oObjectIdentifier);
+							},
 							actions: new Press(),
-							errorMessage: "No list item with the id " + sId + " was found."
+							errorMessage: "No list item with the Name " + sName + " was found."
 						});
 					}
 				},
@@ -87,7 +92,7 @@ sap.ui.require([
 								}).isMatching(oPage);
 							},
 							success: function () {
-								Opa5.assert.ok(true, "The table header has 23 items");
+								Opa5.assert.ok(true, "The table header shows 23 items");
 							},
 							errorMessage: "The Table's header does not container the number of items: 23"
 						});

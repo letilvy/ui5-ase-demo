@@ -10,7 +10,7 @@ sap.ui.require(
 			Given.iStartMyApp();
 
 			//Actions
-			When.onTheWorklistPage.iPressOnTheItemWithTheID("PostID_15");
+			When.onTheWorklistPage.iPressOnTheItemWithTheName("Jeans");
 
 			// Assertions
 			Then.onThePostPage.theTitleShouldDisplayTheName("Jeans");
