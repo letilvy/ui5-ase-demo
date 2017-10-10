@@ -7,10 +7,7 @@
 				updateFinished="onUpdateFinished">
 				<headerToolbar>
 					<Toolbar>
-						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
-						<ToolbarSpacer/>
-						<Button icon="sap-icon://explorer" press="onDialogPressed" text="Popup a Dialog"/>
-						<Button icon="sap-icon://message-popup" press="onMessageBoxPressed" text="Popup a Message box"/>
+						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/> 
 					</Toolbar>
 				</headerToolbar>
 				<columns>

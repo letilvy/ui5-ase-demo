@@ -126,51 +126,6 @@ sap.ui.define([
 				oViewModel.getProperty("/shareSendEmailSubject"),
 				oViewModel.getProperty("/shareSendEmailMessage")
 			);
-		},
-		/**
-		 * Open the Popup dialog
-		 */
-		onDialogPressed: function() {
-			this._getDialog().open();
-		},
-		onSelectUI5: function() {
-			MessageToast.show("SAPUI5");
-			this._getDialog().close();
-		},
-		onSelectABAP: function() {
-			MessageToast.show("ABAP");
-			this._getDialog().close();
-		},
-		/**
-		 * Define and return {sap.ui.xmlfragment}
-		 * @private
-		 */
-		_getDialog: function() {
-			if (!this._oDialog) {
-				this._oDialog = sap.ui.xmlfragment("sap.ui.demo.bulletinboard.view.PopupDialog", this);
-				this.getView().addDependent(this._oDialog);
-			}
-			return this._oDialog;
-		},
-		/**
-		 * Open the message box
-		 */
-		onMessageBoxPressed: function() {
-			MessageBox.information("Do you like SAPUI5 ? ", {
-				actions: [MessageBox.Action.YES,
-					MessageBox.Action.NO
-				],
-				onClose: function(oAction) {
-					if (oAction === MessageBox.Action.YES) {
-						MessageToast.show("SAPUI5");
-						this._getDialog().close();
-					} else {
-						MessageToast.show("ABAP");
-						this._getDialog().close();
-					}
-				}.bind(this)
-			});
-
 		}
 	});
 
