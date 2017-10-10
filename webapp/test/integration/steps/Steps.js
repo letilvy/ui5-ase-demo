@@ -1,26 +1,32 @@
 sap.ui.define([
 	"jquery.sap.global",
 	"sap/ui/test/gherkin/StepDefinitions",
-	"sap/ui/test/Opa5",
-	"sap/ui/test/actions/EnterText"
-], function($, StepDefinitions, Opa5, EnterText) {
+	"sap/ui/test/Opa5"
+], function($, StepDefinitions, Opa5) {
 	"use strict";
 
 	return StepDefinitions.extend("GherkinWithOPA5.Steps", {
 		init: function() {
-			/*var opa5 = new Opa5();
+			this.register(
+				/^on the worklist page: I press on the item with the name "(.*?)"$/i,
+				function(sName, Given, When, Then) {
+					When.onTheWorklistPage.iPressOnTheItemWithTheName(sName);
+				}
+			);
 
-			this.register(/i search for (.*?)$/, function(sTerm) {
-				opa5.waitFor({
-					id: "searchField",
-					viewName: "Worklist",
-					actions: new EnterText({
-						text: sTerm
-					}),
-					errorMessage: "SearchField was not found."
+			this.register(
+				/^on the post page: the title should display the name "(.*?)"$/i,
+				function(sName, Given, When, Then) {
+					Then.onThePostPage.theTitleShouldDisplayTheName(sName);
+				}
+			);
 
-				});
-			});*/
+			this.register(
+				/^on the post page: I press on the tab "(.*?)"$/i,
+				function(sTab, Given, When, Then) {
+					When.onThePostPage.iPressOnTheTabWithTheKey(sTab);
+				}
+			);
 		}
 	});
 

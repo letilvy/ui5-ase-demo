@@ -42,8 +42,8 @@ sap.ui.require([
 							matchers: new Properties({
 								title: sName
 							}),
-							success: function (oPage) {
-								Opa5.assert.ok(true, "was on the remembered detail page");
+							success: function () {
+								Opa5.assert.ok(true, "The Post " + sName + " is shown");
 							},
 							errorMessage: "The Post " + sName + " is not shown"
 						});
