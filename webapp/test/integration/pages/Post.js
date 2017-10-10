@@ -7,20 +7,12 @@ sap.ui.require([
 		"use strict";
 
 		var sViewName = "Post";
-		
+
 		Opa5.createPageObjects({
 			onThePostPage: {
 				baseClass: Common,
-				actions: {
-					iPressTheBackButton: function() {
-
-					}
-				},
-				assertions: {
-					theTitleShouldDisplayTheName: function() {
-
-					}
-				}
+				actions: {},
+				assertions: {}
 			}
 		});
 	});

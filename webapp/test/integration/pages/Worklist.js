@@ -15,14 +15,8 @@ sap.ui.require([
 		Opa5.createPageObjects({
 			onTheWorklistPage: {
 				baseClass: Common,
-				actions: {
-					iPressOnTheItemWithTheID: function(sId) {
-						/* matchers: new BindingPath() */
-					}
-				},
-				assertions: {
-					iShouldSeeTheTable: function() {}
-				}
+				actions: {},
+				assertions: {}
 			}
 		});
 
