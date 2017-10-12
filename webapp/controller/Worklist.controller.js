@@ -48,8 +48,8 @@ sap.ui.define([
 				Hint:
 					oEvent already provided a parameter for count of items
 			*/
-			sTitle = this.getResourceBundle().getText("worklistTableTitle");
-			this.getView().getModel("worklistView").setProperty("/worklistTableTitle", sTitle);
+			// this.getView().getModel("worklistView").setProperty("/worklistTableTitle", sTitle);
+			// sTitle = this.getResourceBundle().getText("worklistTableTitle");
 		}, 
 
 		onPress: function(oEvent) {
