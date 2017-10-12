@@ -13,22 +13,29 @@ sap.ui.define([
 		formatter: formatter,
 		
 		onInit: function(){
+			this.iCount = 0;
 			var oViewModel = new JSONModel({
 				busy: false
 			});
 			this.setModel(oViewModel, "postView");
 			this.getRouter().getRoute("post").attachPatternMatched(this._onPostMatched, this);
 		},
-		
-		onPressFavoriteBtn:function(){
-		    this.getModel().submitChanges({
-		        success:function(){
-		            MessageToast.show("success");
-		        },
-		        error:function(){
-		            MessageBox.error("error");
-		        }
-		    });
+
+		onPressFavoriteBtn: function(oEvent){
+		    /*
+			if(this.iCount % 2 === 0){
+				MessageToast.show("success");
+			}else{
+				MessageToast.show("error");
+			}
+		    */
+		    
+		    if(oEvent.getParameter("pressed")){
+		    	MessageToast.show("Mark as favorite");
+		    }else{
+		    	MessageToast.show("Remove favorite");
+		    }
+		    
 		},
 		
 		onNavBack: function(){

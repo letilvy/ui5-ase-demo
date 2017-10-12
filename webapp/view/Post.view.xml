@@ -13,8 +13,7 @@
 			navButtonPress="onNavBack"
 			title="{i18n>objectTitle}">
 	    <semantic:favoriteAction>
-	        <semantic.FavoriteAction 
-	            pressed="{Favorite}"
+	        <semantic.FavoriteAction
 	            press="onPressFavoriteBtn" />
 	    </semantic:favoriteAction>
 		<semantic:content>

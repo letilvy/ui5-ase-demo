@@ -20,7 +20,7 @@ sap.ui.require(
     		}
     	});
 		
-		QUnit.test("Should show warning message box when updating favorite error", function(assert){
+		/*QUnit.test("Should show warning message box when updating favorite error", function(assert){
 			this.stub(MessageBox, "error");
 			this.stub(ODataModel.prototype,"submitChanges").yieldsTo("error");
 			this.post.onPressFavoriteBtn();                            
@@ -32,5 +32,31 @@ sap.ui.require(
 			this.stub(ODataModel.prototype,"submitChanges").yieldsTo("success");
 			this.post.onPressFavoriteBtn();                            
 			assert.strictEqual(MessageToast.show.getCall(0).args[0], "success", "Message toast information is correct");
+		});*/
+
+		QUnit.test("Should show 'Mask as favorite' when toggle the favorite button", function(assert){
+			//Arrangement
+			this.stub(MessageToast, "show");
+
+			//Action
+			this.post.onPressFavoriteBtn(new sap.ui.base.Event(null, null, {
+				pressed: true
+			}));
+
+			//Assertion
+			assert.strictEqual(MessageToast.show.getCall(0).args[0], "Mark as favorite");
+		});
+
+		QUnit.test("Should show 'Mask as favorite' when toggle the favorite button", function(assert){
+			//Arrangement
+			this.stub(MessageToast, "show");
+
+			//Action
+			this.post.onPressFavoriteBtn(new sap.ui.base.Event(null, null, {
+				pressed: false
+			}));
+
+			//Assertion
+			assert.strictEqual(MessageToast.show.getCall(0).args[0], "Mark as favorite");
 		});
 	});
