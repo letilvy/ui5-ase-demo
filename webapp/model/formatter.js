@@ -6,7 +6,7 @@ sap.ui.define([
 	return {
 		greeter: function (sName) {
 			var oGreeter = new Greeter(function () {
-				return new Date(2018, 6, 21, 18, 0, 0, 0).getTime();
+				return new Date().getTime();
 			});
 
 			return oGreeter.greet(sName);
