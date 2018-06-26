@@ -81,12 +81,12 @@ sap.ui.require([
 						return this.waitFor({
 							id: "tableHeader",
 							viewName: sViewName,
-							matchers: function (oPage) {
-								var sExpectedText = oPage.getModel("i18n").getResourceBundle().getText("worklistTableTitleCount", [23]);
+							matchers: function (oTable) {
+								var sExpectedText = oTable.getModel("i18n").getResourceBundle().getText("worklistTableTitleCount", [23]);
 								return new PropertyStrictEquals({
 									name: "text",
 									value: sExpectedText
-								}).isMatching(oPage);
+								}).isMatching(oTable);
 							},
 							success: function () {
 								Opa5.assert.ok(true, "The table header has 23 items");
