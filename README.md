@@ -2,7 +2,7 @@
 Demo App for UI5 ASE Training
 
 1. Formats value of price with 2 numbers of digits after the decimal point.
-2. Formats value state of price: 
+2. Formats [value state](https://sapui5.hana.ondemand.com/#/api/sap.ui.core.ValueState) of price: 
 
    when price < 50, show Success state.
    
