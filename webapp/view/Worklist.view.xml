@@ -1,6 +1,7 @@
 <mvc:View
 	controllerName="sap.ui.demo.bulletinboard.controller.Worklist"
 	xmlns="sap.m"
+	xmlns:ex="sap.ui.demo.bulletinboard.control"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.m.semantic">
 	<semantic:FullscreenPage
@@ -24,6 +25,7 @@
 				<headerToolbar>
 					<Toolbar>
 						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
+						<ex:CheckBoxEx/>
 						<ToolbarSpacer />
 						<SearchField id="searchField" width="auto" search="onFilterPosts" />
 					</Toolbar>
