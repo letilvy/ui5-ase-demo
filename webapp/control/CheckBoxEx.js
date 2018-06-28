@@ -1,24 +1,19 @@
 sap.ui.define([
 	"jquery.sap.global",
 	"sap/m/CheckBox",
-	"sap/m/CheckBoxRenderer"
-], function(jQuery, CheckBox, CheckBoxRenderer) {
+	"./CheckBoxExRenderer"
+], function(jQuery, CheckBox, CheckBoxExRenderer) {
 
 	"use strict";
 
-	var CheckBoxEx = CheckBox.extend("sap.m.CheckBoxEx", { metadata : {
+	var CheckBoxEx = CheckBox.extend("sap.ui.demo.bulletinboard.control.CheckBoxEx", { metadata : {
 
 		properties : {
-			selected : {type : "boolean", group : "Data", defaultValue : true},
-		},
-
-		renderer: "sap.m.CheckBoxRenderer"
+			selected : {type : "boolean", group : "Data", defaultValue : true}
+		}
+		
 	}});
-
-	/*CheckBox.prototype.init = function() {
-		this.addActiveState(this);
-		IconPool.insertFontFaceStyle();
-	};*/
+	
 
 	return CheckBoxEx;
 
