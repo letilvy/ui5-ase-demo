@@ -25,7 +25,7 @@
 				<headerToolbar>
 					<Toolbar>
 						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
-						<ex:CheckBoxEx/>
+						<ex:CheckBoxEx />
 						<ToolbarSpacer /> 
 					</Toolbar>
 				</headerToolbar>
