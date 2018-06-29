@@ -1,7 +1,13 @@
 # ui5asedemo - Control Testing
 Demo App for UI5 ASE Training
 
-Add unit test cases for custom control sap.ui.demo.bulletinboard.control.CheckBoxEx.
+Add unit test cases for custom control sap.ui.demo.bulletinboard.control.CheckBoxEx:
+
+1. Unit test for default value
+
+2. Unit test for tap event
+
+3. Unit test for 'Enter' key down event
 
 The custom control sap.ui.demo.bulletinboard.control.CheckBoxEx changes the default value of property 'selected' from false to true.
 
