@@ -15,10 +15,7 @@
 			<ObjectHeader
 					id="objectHeader"
 					title="{Title}"
-					number="{
-						path: 'Price',
-						formatter: '.formatter.numberUnit'
-					}"
+					number="{Price}"
 					numberUnit="{Currency}"
 					backgroundDesign="Translucent">
 			</ObjectHeader>
@@ -30,10 +27,7 @@
 						<form:SimpleForm layout="ResponsiveGridLayout">
 							<form:content>
 								<Label text="{i18n>postDateLabel}"/>
-								<Text text="{
-									path: 'Timestamp',
-									formatter: '.formatter.date'
-								}"/>
+								<Text text="{Timestamp}"/>
 								<Label text="{i18n>postDescriptionLabel}"/>
 								<Text text="{Description}"/>
 							</form:content>
