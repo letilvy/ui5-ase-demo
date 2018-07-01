@@ -26,3 +26,5 @@ Demo App for UI5 ASE Training
  
  4. older dates - date formatted with the locale
  
+ PS: you can make use of [sap.ui.core.format.DateFormat](https://sapui5.hana.ondemand.com/#/api/sap.ui.core.format.DateFormat/overview)
+ 
