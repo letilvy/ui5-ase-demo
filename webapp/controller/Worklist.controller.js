@@ -28,7 +28,7 @@ sap.ui.define([
 			oViewModel = new JSONModel({
 				worklistTableTitle: this.getResourceBundle().getText("worklistTableTitle"),
 				shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
-				shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage", [window.location.href]),
+				shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage"),
 				tableBusyDelay: 0
 			});
 			this.getView().setModel(oViewModel, "worklistView");
@@ -40,7 +40,7 @@ sap.ui.define([
 		},
 
 		onUpdateFinished: function (oEvent) {
-
+			// Exercise 1
 		},
 
 		onPress: function (oEvent) {
@@ -51,12 +51,7 @@ sap.ui.define([
 		},
 
 		onShareEmailPress: function () {
-			var oViewModel = this.getView().getModel("worklistView");
-			sap.m.URLHelper.triggerEmail(
-				null,
-				oViewModel.getProperty("/shareSendEmailSubject"),
-				oViewModel.getProperty("/shareSendEmailMessage")
-			);
+			// Exercise 2
 		},
 
 		getResourceBundle: function () {
