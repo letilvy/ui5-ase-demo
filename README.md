@@ -9,3 +9,4 @@
 	
 	
 	b. If there is no itme in table, then the title should display 'Posts', not 'Posts (0)'
+ 
