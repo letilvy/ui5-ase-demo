@@ -41,6 +41,16 @@ sap.ui.define([
 
 		onUpdateFinished: function (oEvent) {
 			// Exercise 1
+			var iCount = oEvent.getParameter("total");
+
+			var oViewModel = this.getViewModel();
+			if (iCount !== 0) {
+				var sTableTitle = this.getResourceBundle().getText("worklistTableTitleCount", [iCount]);
+			} else {
+				sTableTitle = this.getResourceBundle().getText("worklistTableTitle");
+			}
+
+			oViewModel.setProperty("/worklistTableTitle", sTableTitle);
 		},
 
 		onPress: function (oEvent) {
@@ -56,6 +66,10 @@ sap.ui.define([
 
 		getResourceBundle: function () {
 			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
+		},
+
+		getViewModel: function () {
+			return this.getView().getModel("worklistView");
 		}
 
 	});
