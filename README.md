@@ -1,6 +1,6 @@
 # Exercise: Controller Testing
 
-**1. Enhance table title**
+### 1. Enhance table title
 
 	a. Make the table title display conut of items as below:
 	
@@ -9,4 +9,11 @@
 	
 	
 	b. If there is no itme in table, then the title should display 'Posts', not 'Posts (0)'
+
+
+
+### 2. Implement send email function
+
+	a. Selected items from table should be listed in message body:
+	
  
