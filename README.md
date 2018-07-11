@@ -18,6 +18,6 @@
 
 ### 2. Implement send email function
 
-	a. Selected items from table should be listed as message body:
+	a. Selected items from table should be listed in email as message body:
 	
  
