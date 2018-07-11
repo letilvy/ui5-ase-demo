@@ -20,4 +20,5 @@
 
 	a. Selected items from table should be listed in email as message body:
 	
- 
+![alt tag](https://user-images.githubusercontent.com/23159761/42561294-5eb1512c-852b-11e8-9b77-b60df26be722.png)
+![alt tag](https://user-images.githubusercontent.com/23159761/42561458-bb8ced20-852b-11e8-9d9a-6b379f06f753.png)
