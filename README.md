@@ -3,4 +3,6 @@
 ![image](https://user-images.githubusercontent.com/23159761/42564645-e616464c-8533-11e8-9878-b0ab0f0e4023.png)
 
 
-### 2. Continue with exercise 1, make the mock server filters response data so that only return items with quantity is bigger than 104
+### 2. Make the mock server filter response data
+
+only return items that with quantity bigger than 104
