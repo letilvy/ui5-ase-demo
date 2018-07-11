@@ -29,7 +29,8 @@ sap.ui.define([
 				worklistTableTitle: this.getResourceBundle().getText("worklistTableTitle"),
 				shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
 				shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage"),
-				tableBusyDelay: 0
+				tableBusyDelay: 0,
+				mode: "MultiSelect"
 			});
 			this.getView().setModel(oViewModel, "worklistView");
 
@@ -62,12 +63,24 @@ sap.ui.define([
 
 		onShareEmailPress: function () {
 			// Exercise 2
+			var oViewModel = this.getViewModel();
+			var sSubject = oViewModel.getProperty("/shareSendEmailSubject");
+			var sMessage = oViewModel.getProperty("/shareSendEmailMessage");
+
+			var oTable = this.byId("table");
+			var aSelectedItems = oTable.getSelectedItems();
+
+			aSelectedItems.forEach(function (oItem) {
+				var oProperty = oItem.getBindingContext().getProperty();
+				sMessage = sMessage + " \n " + oProperty.Title + "    " + oProperty.Price + "    " + oProperty.Currency;
+			});
+
+			sap.m.URLHelper.triggerEmail("", sSubject, sMessage);
 		},
 
 		getResourceBundle: function () {
 			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
 		},
-
 		getViewModel: function () {
 			return this.getView().getModel("worklistView");
 		}
