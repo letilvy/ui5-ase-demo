@@ -5,4 +5,4 @@
 
 ### 2. Make the mock server filter response data
 
-only return items that with quantity bigger than 104
+return items with quantity bigger than 104 only
