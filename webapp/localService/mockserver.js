@@ -10,13 +10,18 @@ sap.ui.define([
 	var _fnFilterData = function (oEvent) {
 
 		/* This function will be invoked for twice, one is for $count, another is for results */
-		var oFilteredData = oEvent.getParameter("oFilteredData");
+		// var oFilteredData = oEvent.getParameter("oFilteredData");
+		var oData = oEvent.getSource().getEntitySetData("Posts");
+		var oXhr = oEvent.getParameter("oXhr");
 
-		oEvent.getParameter("oFilteredData").results = oFilteredData.results.filter(function (oItem) {
-			return oItem.Quantity > 104;
-		});
-
+		if (oXhr.url.indexOf("$count") === -1) {
+			var aItems = oData.filter(function (oItem) {
+				return oItem.Quantity > 104;
+			});
+			oEvent.getParameter("oFilteredData").results = aItems;
+		}
 	};
+
 	return {
 		/**
 		 * Initializes the mock server.
@@ -51,8 +56,35 @@ sap.ui.define([
 				bGenerateMissingMockData: true
 			});
 
-			/* Manipulate response data */
-			oMockServer.attachAfter("GET", _fnFilterData, "Posts");
+			// Exercise 2 --------------------------------------------------------->
+
+			/* Solution 1:  Modify a 'DELETE' request to mockserver */
+
+			var aRequests = oMockServer.getRequests();
+			aRequests.push({
+				method: "GET",
+				path: /(Posts)\/?(\?(.*))?/,
+				response: function (oXhr, urlParameters) {
+					var oItems = oMockServer.getEntitySetData("Posts");
+					var oItemsFiltered = oItems.filter(function (oItem) {
+						return oItem.Quantity > 104;
+					});
+
+					oMockServer.setEntitySetData("Posts", oItemsFiltered);
+
+					oXhr.respondJSON(200, {}, {
+						"d": {
+							"results": oItemsFiltered
+						}
+					});
+				}
+			});
+			oMockServer.setRequests(aRequests);
+
+			/* Solution 2:  Manipulate response data  */
+			// oMockServer.attachAfter("GET", _fnFilterData, "Posts");
+
+			//<--------------------------------------------------------------------
 
 			oMockServer.start();
 
