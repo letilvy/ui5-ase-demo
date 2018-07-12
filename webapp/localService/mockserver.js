@@ -7,6 +7,16 @@ sap.ui.define([
 		_sAppModulePath = "sap/ui/demo/bulletinboard/",
 		_sJsonFilesModulePath = _sAppModulePath + "localService/mockdata";
 
+	var _fnFilterData = function (oEvent) {
+
+		/* This function will be invoked for twice, one is for $count, another is for results */
+		var oFilteredData = oEvent.getParameter("oFilteredData");
+
+		oEvent.getParameter("oFilteredData").results = oFilteredData.results.filter(function (oItem) {
+			return oItem.Quantity > 104;
+		});
+
+	};
 	return {
 		/**
 		 * Initializes the mock server.
@@ -15,7 +25,8 @@ sap.ui.define([
 		 * @public
 		 */
 
-		init : function () {
+		init: function () {
+
 			var oUriParameters = jQuery.sap.getUriParameters(),
 				sJsonFilesUrl = jQuery.sap.getModulePath(_sJsonFilesModulePath),
 				sManifestUrl = jQuery.sap.getModulePath(_sAppModulePath + "manifest", ".json"),
@@ -26,19 +37,22 @@ sap.ui.define([
 				sMockServerUrl = /.*\/$/.test(oMainDataSource.uri) ? oMainDataSource.uri : oMainDataSource.uri + "/";
 
 			oMockServer = new MockServer({
-				rootUri : sMockServerUrl
+				rootUri: sMockServerUrl
 			});
 
 			// configure mock server with a delay of 1s
 			MockServer.config({
-				autoRespond : true,
-				autoRespondAfter : (oUriParameters.get("serverDelay") || 1000)
+				autoRespond: true,
+				autoRespondAfter: (oUriParameters.get("serverDelay") || 1000)
 			});
 
 			oMockServer.simulate(sMetadataUrl, {
-				sMockdataBaseUrl : sJsonFilesUrl,
-				bGenerateMissingMockData : true
+				sMockdataBaseUrl: sJsonFilesUrl,
+				bGenerateMissingMockData: true
 			});
+
+			/* Manipulate response data */
+			oMockServer.attachAfter("GET", _fnFilterData, "Posts");
 
 			oMockServer.start();
 
@@ -47,4 +61,3 @@ sap.ui.define([
 	};
 
 });
-

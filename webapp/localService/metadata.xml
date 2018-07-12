@@ -19,10 +19,12 @@
 					sap:label="Unit of Measure" sap:sortable="true" sap:updatable="false"/>
 				<Property Name="Price" Nullable="false" Precision="23" Scale="4" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
 					sap:label="Unit Number" sap:updatable="false"/>
+				<Property Name="Quantity" Nullable="false" Precision="23" Scale="4" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quantity" sap:updatable="false"/>
 				<Property Name="Flagged" Nullable="false" Type="Edm.Boolean"/>
-				<NavigationProperty Name="Comments" ToRole="ToRole_PostToComment" FromRole="FromRole_PostToComment" Relationship="BULLETINBOARD.PostToComment"/>
+				<NavigationProperty Name="Comments" ToRole="ToRole_PostToComment" FromRole="FromRole_PostToComment"
+					Relationship="BULLETINBOARD.PostToComment"/>
 			</EntityType>
-
 			<EntityType Name="Category" sap:content-version="1" xmlns:sap="http://www.sap.com/Protocols/SAPData">
 				<Key>
 					<PropertyRef Name="CategoryID"/>
@@ -46,8 +48,8 @@
 					sap:updatable="false"/>
 			</EntityType>
 			<Association sap:content-version="1" Name="PostToComment">
-				<End Type="BULLETINBOARD.Post" Multiplicity="1" Role="FromRole_PostToComment" />
-				<End Type="BULLETINBOARD.Comment" Multiplicity="*" Role="ToRole_PostToComment" />
+				<End Type="BULLETINBOARD.Post" Multiplicity="1" Role="FromRole_PostToComment"/>
+				<End Type="BULLETINBOARD.Comment" Multiplicity="*" Role="ToRole_PostToComment"/>
 				<ReferentialConstraint>
 					<Principal Role="FromRole_PostToComment">
 						<PropertyRef Name="PostID"/>

@@ -1,5 +1,4 @@
-[
-  {
+[{
 	"PostID": "PostID_1",
 	"Title": "29'er Mountain Bike (red)",
 	"Timestamp": "/Date(1428223780000)/",
@@ -8,9 +7,9 @@
 	"Contact": "contact.me07@gmail.com",
 	"Currency": "USD",
 	"Price": 81,
+	"Quantity": 100,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_2",
 	"Title": "Football (rare with signatures)",
 	"Timestamp": "/Date(1428504382000)/",
@@ -19,9 +18,9 @@
 	"Contact": "soccernerd@hotmail.de",
 	"Currency": "EUR",
 	"Price": 420,
+	"Quantity": 101,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_3",
 	"Title": "Video Games",
 	"Timestamp": "/Date(1433357393000)/",
@@ -30,9 +29,9 @@
 	"Contact": "RogerRoger@gmail.com",
 	"Currency": "USD",
 	"Price": 27,
+	"Quantity": 102,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_4",
 	"Title": "Fluffy Teddy Bear",
 	"Timestamp": "/Date(1429892877000)/",
@@ -41,9 +40,9 @@
 	"Contact": "rainbow.glitter03@gmail.com",
 	"Currency": "USD",
 	"Price": 13,
+	"Quantity": 103,
 	"Flagged": 1
-  },
-  {
+}, {
 	"PostID": "PostID_5",
 	"Title": "Car Tires, 22 Inch",
 	"Timestamp": "/Date(1423579562000)/",
@@ -52,9 +51,9 @@
 	"Contact": "superpacer@gmail.com",
 	"Currency": "USD",
 	"Price": 121,
+	"Quantity": 104,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_6",
 	"Title": "Garage Door with Blue Stripes, 4m x 2,2m",
 	"Timestamp": "/Date(1431603971000)/",
@@ -63,9 +62,9 @@
 	"Contact": "john.doe@gmail.com",
 	"Currency": "USD",
 	"Price": 481,
+	"Quantity": 105,
 	"Flagged": 1
-  },
-  {
+}, {
 	"PostID": "PostID_7",
 	"Title": "Kids Toys, a Whole Box of Stuff",
 	"Timestamp": "/Date(1435603415000)/",
@@ -74,9 +73,9 @@
 	"Contact": "AGreatDeal@gmail.com",
 	"Currency": "USD",
 	"Price": 63,
+	"Quantity": 106,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_8",
 	"Title": "Screwdrivers",
 	"Timestamp": "/Date(1439273334000)/",
@@ -85,9 +84,9 @@
 	"Contact": "houseofparts@gmail.com",
 	"Currency": "USD",
 	"Price": 28,
+	"Quantity": 107,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_9",
 	"Title": "Comfortable Bike Saddle",
 	"Timestamp": "/Date(1426606523000)/",
@@ -96,9 +95,9 @@
 	"Contact": "gotIt@gmail.com",
 	"Currency": "USD",
 	"Price": 25,
+	"Quantity": 108,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_10",
 	"Title": "Bike Rack",
 	"Timestamp": "/Date(1429871021000)/",
@@ -107,9 +106,9 @@
 	"Contact": "MajorRefactoring@gmail.com",
 	"Currency": "USD",
 	"Price": 106,
+	"Quantity": 109,
 	"Flagged": 1
-  },
-  {
+}, {
 	"PostID": "PostID_11",
 	"Title": "DVD: Trains of Europe",
 	"Timestamp": "/Date(1425446058000)/",
@@ -118,9 +117,9 @@
 	"Contact": "hopOnTheTrain@gmail.com",
 	"Currency": "USD",
 	"Price": 61,
+	"Quantity": 110,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_12",
 	"Title": "Matress",
 	"Timestamp": "/Date(1435612710000)/",
@@ -129,9 +128,9 @@
 	"Contact": "abc@gmail.com",
 	"Currency": "USD",
 	"Price": 306,
+	"Quantity": 111,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_13",
 	"Title": "High-End Gamer PC",
 	"Timestamp": "/Date(1436435262000)/",
@@ -140,9 +139,9 @@
 	"Contact": "player.mike@gmail.com",
 	"Currency": "USD",
 	"Price": 256,
+	"Quantity": 112,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_14",
 	"Title": "Cooking Pot Set",
 	"Timestamp": "/Date(1427938348000)/",
@@ -151,9 +150,9 @@
 	"Contact": "abc@gmail.com",
 	"Currency": "USD",
 	"Price": 234,
+	"Quantity": 113,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_15",
 	"Title": "Jeans",
 	"Timestamp": "/Date(1437280068000)/",
@@ -162,9 +161,9 @@
 	"Contact": "sellTwoPairs@gmail.com",
 	"Currency": "EUR",
 	"Price": 34,
+	"Quantity": 114,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_16",
 	"Title": "Moving Boxes",
 	"Timestamp": "/Date(1424653593000)/",
@@ -173,9 +172,9 @@
 	"Contact": "overhaul08@gmail.com",
 	"Currency": "USD",
 	"Price": 60,
+	"Quantity": 115,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_17",
 	"Title": "Car VW Golf (white)",
 	"Timestamp": "/Date(1436927019000)/",
@@ -184,9 +183,9 @@
 	"Contact": "james.McGillan@gmail.com",
 	"Currency": "USD",
 	"Price": 3006,
+	"Quantity": 116,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_18",
 	"Title": "Swimming Pool",
 	"Timestamp": "/Date(1436402641000)/",
@@ -195,9 +194,9 @@
 	"Contact": "poollov3r@gmail.com",
 	"Currency": "USD",
 	"Price": 4587,
+	"Quantity": 116,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_19",
 	"Title": "Travel Suitcases",
 	"Timestamp": "/Date(1426837938000)/",
@@ -206,9 +205,9 @@
 	"Contact": "aroundtheworld@hotmail.com",
 	"Currency": "USD",
 	"Price": 560,
+	"Quantity": 117,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_20",
 	"Title": "Rainbow Stickers",
 	"Timestamp": "/Date(1430961733000)/",
@@ -217,9 +216,9 @@
 	"Contact": "james.holden@gmail.com",
 	"Currency": "USD",
 	"Price": 45,
+	"Quantity": 118,
 	"Flagged": 1
-  },
-  {
+}, {
 	"PostID": "PostID_21",
 	"Title": "Notebook",
 	"Timestamp": "/Date(1438286726000)/",
@@ -228,9 +227,9 @@
 	"Contact": "to.felldown@gmail.com",
 	"Currency": "USD",
 	"Price": 23,
+	"Quantity": 118,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_22",
 	"Title": "Plasma TV 60\"!",
 	"Timestamp": "/Date(1425501468000)/",
@@ -239,9 +238,9 @@
 	"Contact": "large.one@gmail.com",
 	"Currency": "USD",
 	"Price": 360,
+	"Quantity": 119,
 	"Flagged": 0
-  },
-  {
+}, {
 	"PostID": "PostID_23",
 	"Title": "Cheap Boat",
 	"Timestamp": "/Date(1439561313000)/",
@@ -250,6 +249,6 @@
 	"Contact": "gotboats@gmail.com",
 	"Currency": "USD",
 	"Price": 26263,
+	"Quantity": 119,
 	"Flagged": 0
-  }
-]
+}]
