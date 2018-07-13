@@ -1,8 +1,8 @@
 sap.ui.require([
-		'sap/ui/test/Opa5',
-		'sap/ui/test/matchers/Properties',
-		'sap/ui/demo/bulletinboard/test/integration/pages/Common',
-		'sap/ui/test/actions/Press'
+		"sap/ui/test/Opa5",
+		"sap/ui/test/matchers/Properties",
+		"sap/ui/demo/bulletinboard/test/integration/pages/Common",
+		"sap/ui/test/actions/Press"
 	],
 	function(Opa5, Properties, Common, Press) {
 		"use strict";

@@ -1,11 +1,11 @@
 sap.ui.require([
-		'sap/ui/test/Opa5',
-		'sap/ui/test/matchers/AggregationLengthEquals',
-		'sap/ui/test/matchers/PropertyStrictEquals',
-		'sap/ui/test/matchers/BindingPath',
-		'sap/ui/demo/bulletinboard/test/integration/pages/Common',
-		'sap/ui/test/actions/Press',
-		'sap/ui/test/actions/EnterText'
+		"sap/ui/test/Opa5",
+		"sap/ui/test/matchers/AggregationLengthEquals",
+		"sap/ui/test/matchers/PropertyStrictEquals",
+		"sap/ui/test/matchers/BindingPath",
+		"sap/ui/demo/bulletinboard/test/integration/pages/Common",
+		"sap/ui/test/actions/Press",
+		"sap/ui/test/actions/EnterText"
 	],
 	function (Opa5,
 		AggregationLengthEquals,
