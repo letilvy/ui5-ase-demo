@@ -51,7 +51,7 @@ sap.ui.define([
 				query: {
 					tab: oEvent.getParameter("selectedKey")
 				}
-			});
+			}, true);
 
 		},
 		/* =========================================================== */
@@ -94,13 +94,10 @@ sap.ui.define([
 			oQuery = oArgs["?query"];
 			if (oQuery && _aValidTabKeys.indexOf(oQuery.tab) > -1) {
 				oViewModel.setProperty("/selectedKey", oQuery.tab);
-			} 
-			// else {
-			// 	// the default query param should be visible at all time
-			// 	this.getRouter().navTo("posts", {
-			// 		postId: oEvent.getSource().getBindingContext().getProperty("PostID")
-			// 	}, true /*no history*/ );
-			// }
+			} else {
+				// the default query param should be visible at all time
+				this.getRouter().navTo("worklist");
+			}
 		}
 
 	});

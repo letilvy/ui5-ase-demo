@@ -96,7 +96,7 @@ sap.ui.define([
 				query: {
 					tab: "info"
 				}
-			});
+			}, true);
 
 		},
 

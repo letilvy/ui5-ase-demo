@@ -18,48 +18,27 @@ sap.ui.require(
 			Then.onThePostPage.theTitleShouldDisplayTheName("Jeans");
 		});
 
-		opaTest("Should go back to the TablePage", function (Given, When, Then) { 
-			
+		opaTest("Should go back to the TablePage", function (Given, When, Then) {
+
 			// Actions
 			When.onThePostPage.iPressTheBackButton();
 
 			// Assertions
-			Then.onTheWorklistPage.iShouldSeeTheTable();
+			Then.onTheWorklistPage.iShouldSeeTheTable().and.iTeardownMyAppFrame();
 		});
 
-		opaTest("Should see the post page when a user changed hash to a post", function (Given, When, Then) { 
+		QUnit.module("Post - start from post detail page");
 
-			//Actions
-			When.onTheWorklistPage.iChangedHashToThePost("PostID_23");
-
-			// Assertions
-			Then.onThePostPage.theTitleShouldDisplayTheName("Cheap Boat");
-		});
-
-		opaTest("Should see the post page when a user changed hash to display viewed info", function (Given, When, Then) { 
-
-			//Actions
-			When.onThePostPage.iChangedHashToDisplayViewInfoOfThePost("PostID_23");
+		opaTest("Should see view statistics of 'PostID_15'  when a user start app with given hash", function (Given, When, Then) {
+			// Arrangements
+			Given.iStartMyApp({
+				delay: 0,
+				hash: "/Post/PostID_15/infotype?tab=statistics"
+			});
 
 			// Assertions
-			Then.onThePostPage.theIconViewInfoIsSelected();
-		});
-		
-		opaTest("Should go back to the TablePage", function (Given, When, Then) { 
-			
-			// Actions
-			When.onThePostPage.iPressTheBackButton();
+			Then.onThePostPage.theTitleShouldDisplayTheName("Jeans").and.theIconViewInfoIsSelected().and.iTeardownMyAppFrame();
 
-			// Assertions
-			Then.onTheWorklistPage.iShouldSeeTheTable();
-		});
-		
-		opaTest("Should be on the post page again when browser forwards is pressed", function (Given, When, Then) {
-			// Actions
-			When.onTheBrowser.iPressOnTheForwardButton();
-
-			// Assertions
-			Then.onThePostPage.theTitleShouldDisplayTheName("Cheap Boat").and.iTeardownMyAppFrame();
 		});
 
 	}
