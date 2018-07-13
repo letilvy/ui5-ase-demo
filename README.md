@@ -1,6 +1,6 @@
 # Exercise: Controller Testing
 
-### 1. Enhance table title
+### 1. Enhance table title(DEMO)
 
 	a. Make the table title display conut of items as below:
 	
