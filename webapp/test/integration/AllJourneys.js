@@ -7,11 +7,8 @@ QUnit.config.autostart = false;
 
 sap.ui.require([
 	"sap/ui/test/Opa5",
-	"sap/ui/demo/bulletinboard/test/integration/pages/Common",
-	"sap/ui/demo/bulletinboard/test/integration/pages/Worklist",
-	"sap/ui/demo/bulletinboard/test/integration/pages/Browser",
-	"sap/ui/demo/bulletinboard/test/integration/pages/Post"
-], function(Opa5, Common) {
+	"sap/ui/demo/bulletinboard/test/integration/pages/Common"
+], function (Opa5, Common) { 
 	"use strict";
 	Opa5.extendConfig({
 		arrangements: new Common(),
@@ -20,10 +17,8 @@ sap.ui.require([
 	});
 
 	sap.ui.require([
-		/*
-			Define path of journey here
-		*/ 
-	], function() {
+		
+		], function () {
 		QUnit.start();
 	});
 });
