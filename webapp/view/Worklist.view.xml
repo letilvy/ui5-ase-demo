@@ -11,7 +11,7 @@
 				id="table"
 				width="auto"
 				class="sapUiResponsiveMargin"
-				growing="true"
+				growing="false"
 				items="{
 					path: '/Posts',
 					sorter: {
