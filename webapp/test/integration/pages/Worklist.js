@@ -8,12 +8,12 @@ sap.ui.require([
 		'sap/ui/test/actions/EnterText'
 	],
 	function (Opa5,
-			  AggregationLengthEquals,
-			  PropertyStrictEquals,
-			  BindingPath,
-			  Common,
-			  Press,
-			  EnterText) {
+		AggregationLengthEquals,
+		PropertyStrictEquals,
+		BindingPath,
+		Common,
+		Press,
+		EnterText) {
 		"use strict";
 
 		var sViewName = "Worklist",
@@ -37,15 +37,22 @@ sap.ui.require([
 						return this.waitFor({
 							controlType: "sap.m.ColumnListItem",
 							viewName: sViewName,
-							matchers:  new BindingPath({
+							matchers: new BindingPath({
 								path: "/Posts('" + sId + "')"
 							}),
 							actions: new Press(),
 							errorMessage: "No list item with the ID " + sId + " was found."
 						});
-					} 
+					},
+					iChangedHashToThePost: function (sId) {
+						return this.waitFor({
+							success: function () {
+								sap.ui.test.Opa5.getWindow().location.hash = "#/Post/" + sId;
+							}
+						});
+					}
 				},
-				assertions: { 
+				assertions: {
 
 					theTableShouldHavePagination: function () {
 						return this.waitFor({
