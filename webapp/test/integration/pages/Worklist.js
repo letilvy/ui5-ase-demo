@@ -47,7 +47,7 @@ sap.ui.require([
 					iChangedHashToThePost: function (sId) {
 						return this.waitFor({
 							success: function () {
-								sap.ui.test.Opa5.getWindow().location.hash = "#/Post/" + sId;
+								sap.ui.test.Opa5.getWindow().location.hash = "#/Post/" + sId + "/infotype?tab=info";
 							}
 						});
 					}

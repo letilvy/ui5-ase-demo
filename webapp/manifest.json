@@ -20,7 +20,8 @@
 					"localUri": "localService/metadata.xml"
 				}
 			}
-		}
+		},
+		"resources": "resources.json"
 	},
 	"sap.ui": {
 		"_version": "1.1.0",
@@ -33,10 +34,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
@@ -73,19 +71,15 @@
 				"controlId": "app",
 				"controlAggregation": "pages"
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "worklist",
-					"target": "worklist"
-				},
-				{
-					"pattern": "Post/{postId}",
-					"name": "post",
-					"target": "post"
-				}
-
-			],
+			"routes": [{
+				"pattern": "",
+				"name": "worklist",
+				"target": "worklist"
+			}, {
+				"pattern": "Post/{postId}/infotype:?query:",
+				"name": "post",
+				"target": "post"
+			}],
 			"targets": {
 				"worklist": {
 					"viewName": "Worklist",
@@ -98,7 +92,10 @@
 					"viewLevel": 2
 				}
 			}
-
+		},
+		"contentDensities": {
+			"compact": false,
+			"cozy": false
 		}
 	}
 }

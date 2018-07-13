@@ -35,6 +35,15 @@ sap.ui.require(
 			// Assertions
 			Then.onThePostPage.theTitleShouldDisplayTheName("Cheap Boat");
 		});
+
+		opaTest("Should see the post page when a user changed hash to display viewed info", function (Given, When, Then) { 
+
+			//Actions
+			When.onThePostPage.iChangedHashToDisplayViewInfoOfThePost("PostID_23");
+
+			// Assertions
+			Then.onThePostPage.theIconViewInfoIsSelected();
+		});
 		
 		opaTest("Should go back to the TablePage", function (Given, When, Then) { 
 			

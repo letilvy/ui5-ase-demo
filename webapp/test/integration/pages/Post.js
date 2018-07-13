@@ -4,7 +4,7 @@ sap.ui.require([
 		"sap/ui/demo/bulletinboard/test/integration/pages/Common",
 		"sap/ui/test/actions/Press"
 	],
-	function(Opa5, Properties, Common, Press) {
+	function (Opa5, Properties, Common, Press) {
 		"use strict";
 
 		var sViewName = "Post";
@@ -13,27 +13,44 @@ sap.ui.require([
 			onThePostPage: {
 				baseClass: Common,
 				actions: {
-					iPressTheBackButton: function() {
+					iPressTheBackButton: function () {
 						return this.waitFor({
 							id: "page",
 							viewName: sViewName,
 							actions: new Press(),
 							errorMessage: "Did not find the nav button on object page"
 						});
+					},
+					iChangedHashToDisplayViewInfoOfThePost: function (sId) {
+						return this.waitFor({
+							success: function () {
+								sap.ui.test.Opa5.getWindow().location.hash = "#/Post/" + sId + "/infotype?tab=statistics";
+							}
+						});
 					}
 				},
 				assertions: {
-					theTitleShouldDisplayTheName: function(sName) {
+					theTitleShouldDisplayTheName: function (sName) {
 						return this.waitFor({
 							id: "objectHeader",
 							viewName: sViewName,
 							matchers: new Properties({
 								title: sName
 							}),
-							success: function(oPage) {
+							success: function (oPage) {
 								Opa5.assert.ok(true, "was on the remembered detail page");
 							},
 							errorMessage: "The Post " + sName + " is not shown"
+						});
+					},
+					theIconViewInfoIsSelected: function () {
+						return this.waitFor({
+							id: "iconTabBar",
+							viewName: sViewName,
+							controlType: "sap.m.IconTabBar",
+							matchers: new Properties({
+								selectedKey: "statistics"
+							})
 						});
 					}
 				}
