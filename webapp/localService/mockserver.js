@@ -58,7 +58,7 @@ sap.ui.define([
 
 			// Exercise 2 --------------------------------------------------------->
 
-			/* Solution 1:  Modify a 'DELETE' request to mockserver */
+			/* Solution 1:  Modify a 'GET' request to mockserver */
 
 			var aRequests = oMockServer.getRequests();
 			aRequests.push({
