@@ -2,7 +2,7 @@
 	xmlns:semantic="sap.m.semantic">
 	<semantic:FullscreenPage id="page" title="{i18n>worklistViewTitle}">
 		<semantic:content>
-			<Table id="table" width="auto" class="sapUiResponsiveMargin" growing="true"
+			<Table id="table" width="auto" class="sapUiResponsiveMargin" growing="false"
 				items="{ path: '/Posts', sorter: { path: 'Title', descending: false } }" busyIndicatorDelay="{worklistView>/tableBusyDelay}"
 				updateFinished="onUpdateFinished">
 				<headerToolbar>
