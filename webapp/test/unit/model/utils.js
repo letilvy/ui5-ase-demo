@@ -8,7 +8,7 @@ sap.ui.require(
 	function (utils, MessageBox) {
 		"use strict";
 		
-		QUnit.module("Sinon - difference between stub and spy");
+		/*QUnit.module("Sinon - difference between stub and spy");
 		
 		QUnit.test("Should show warning message box when error code is even", function(assert){
 			this.stub(MessageBox, "show");
@@ -21,5 +21,5 @@ sap.ui.require(
 			utils.errorHandler(3);
 			//assert.strictEqual(MessageBox.show.getCall(0).args[1].icon, "ERROR", "Message box type is correct");
 			assert.ok(oSpy.calledWith(sinon.match.string, sinon.match({icon:"ERROR"})), "Message box type is correct");
-		});
+		});*/
 	});
