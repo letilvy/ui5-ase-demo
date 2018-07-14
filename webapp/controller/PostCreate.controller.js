@@ -55,7 +55,7 @@ sap.ui.define([
 			}
 
 			mInput.PostID = jQuery.sap.uid();
-			return mInput;
+			return $.extend(mInput,{Currency:"USD",Timestamp:new Date()});
 		},
 
 		onSavePost: function() {
