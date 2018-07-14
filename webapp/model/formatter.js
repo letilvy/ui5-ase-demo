@@ -1,18 +1,13 @@
 sap.ui.define([
-
-], function () {
+	'sap/ui/demo/bulletinboard/model/Greeter'
+], function (Greeter) {
 	'use strict';
 
 	return {
-		/**
-		 * Defines a description based on the quantity
-		 *
-		 * @public
-		 * @param {number} iQuantity, the quantity of a post
-		 * @returns {string} the description text for the quantity
-		 */
-		quantityDesc: function (iQuantity) {
+		greeter: function (sName) {
+			var oGreeter = new Greeter();
 
+			return oGreeter.greet(sName);
 		}
 	};
 

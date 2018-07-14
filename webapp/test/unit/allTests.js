@@ -1,5 +1,5 @@
 sap.ui.define([
-	'test/unit/model/formatter.test'
+	'test/unit/model/Greeter'
 ], function() {
 	'use strict';
 });

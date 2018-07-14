@@ -12,14 +12,6 @@
 		},
 		"ach": "CA-UI5-FST",
 		"dataSources": {
-			"mainService": {
-				"uri": "/here/goes/your/serviceUrl/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
-				}
-			}
 		}
 	},
 	"sap.ui": {
@@ -57,14 +49,6 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
 					"bundleName": "sap.ui.demo.bulletinboard.i18n.i18n"
-				}
-			},
-			"": {
-				"dataSource": "mainService",
-				"settings": {
-					"metadataUrlParams": {
-						"sap-documentation": "heading"
-					}
 				}
 			}
 		},
