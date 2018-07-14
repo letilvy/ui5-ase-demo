@@ -86,7 +86,9 @@ sap.ui.define([
 				PostID: jQuery.sap.uid(),
 				Title: oInputName.getValue(),
 				Price: oInputPrice.getValue(),
-				Category: oSelectCategory.getSelectedItem().getText()
+				Category: oSelectCategory.getSelectedItem().getText(),
+				Currency:"USD",
+				Timestamp:new Date()
 			}, {
 				success: function() {
 					oCreateForm.setBusy(false);
