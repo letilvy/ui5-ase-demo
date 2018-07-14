@@ -19,20 +19,6 @@ sap.ui.require(
     			this.post.destroy();
     		}
     	});
-		
-		/*QUnit.test("Should show warning message box when updating favorite error", function(assert){
-			this.stub(MessageBox, "error");
-			this.stub(ODataModel.prototype,"submitChanges").yieldsTo("error");
-			this.post.onPressFavoriteBtn();                            
-			assert.strictEqual(MessageBox.error.getCall(0).args[0], "error", "Message box information is correct");
-		});
-		
-		QUnit.test("Should show success message toast when updating favorite success", function(assert){
-			this.stub(MessageToast, "show");
-			this.stub(ODataModel.prototype,"submitChanges").yieldsTo("success");
-			this.post.onPressFavoriteBtn();                            
-			assert.strictEqual(MessageToast.show.getCall(0).args[0], "success", "Message toast information is correct");
-		});*/
 
 		QUnit.test("Should show 'Mask as favorite' when toggle the favorite button", function(assert){
 			//Arrangement
@@ -47,7 +33,7 @@ sap.ui.require(
 			assert.strictEqual(MessageToast.show.getCall(0).args[0], "Mark as favorite");
 		});
 
-		QUnit.test("Should show 'Mask as favorite' when toggle the favorite button", function(assert){
+		QUnit.test("Should show 'Remove favorite' when toggle the favorite button", function(assert){
 			//Arrangement
 			this.stub(MessageToast, "show");
 
@@ -57,6 +43,20 @@ sap.ui.require(
 			}));
 
 			//Assertion
-			assert.strictEqual(MessageToast.show.getCall(0).args[0], "Mark as favorite");
+			assert.strictEqual(MessageToast.show.getCall(0).args[0], "Remove favorite");
 		});
+		
+		/*QUnit.test("Should show warning message box when updating favorite error", function(assert){
+			this.stub(MessageBox, "error");
+			this.stub(ODataModel.prototype,"submitChanges").yieldsTo("error");
+			this.post.onPressFavoriteBtn();                            
+			assert.strictEqual(MessageBox.error.getCall(0).args[0], "error");
+		});
+		
+		QUnit.test("Should show success message toast when updating favorite success", function(assert){
+			this.stub(MessageToast, "show");
+			this.stub(ODataModel.prototype,"submitChanges").yieldsTo("success");
+			this.post.onPressFavoriteBtn();                            
+			assert.strictEqual(MessageToast.show.getCall(0).args[0], "success");
+		});*/
 	});

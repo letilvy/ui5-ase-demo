@@ -14,6 +14,7 @@
 			title="{i18n>objectTitle}">
 	    <semantic:favoriteAction>
 	        <semantic.FavoriteAction
+	            pressed="{Favorite}"
 	            press="onPressFavoriteBtn" />
 	    </semantic:favoriteAction>
 		<semantic:content>
