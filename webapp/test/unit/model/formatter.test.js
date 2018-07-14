@@ -3,6 +3,6 @@ sap.ui.require([
 ], function (Formatter) {
   'use strict';
 
-  QUnit.module("Formatter");
+  QUnit.module("Formatter - Quantity description");
 
 });

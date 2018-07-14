@@ -1,11 +1,12 @@
 # TDD Kata
-Greeter
 
-All tests should always pass, regardless of environment conditions.
+TDD Kata for UI5 ASE Training
 
-Write a `Greeter` class with `greet` function that receives a `name` as input and outputs `Hello <name>`. The signature of `greet` should not change throughout the kata. You are allowed to construct `Greeter` object as you please.
+Part 1 - Requirments
+1. Formatter description text based on the quantity
+2. when quantity >= 100, show 99+
+   when 100 > quantity >= 20, show Many
+   when 20 > quantity > 0, show Only <quantity> left in stock
+   when quantity = 0, show Out of Stock
 
-1. `greet` trims the input
-2. `greet` returns `Good morning <name>` when 06:00 <= time < 12:00
-3. `greet` returns `Good evening <name>` when 18:00 <= time < 22:00
-4. `greet` returns `Good night <name>`   when 22:00 <= time < 6:00
+![quantitydesc](https://user-images.githubusercontent.com/8943644/42723690-4c57b194-8795-11e8-88c7-80c42801f71a.png)
