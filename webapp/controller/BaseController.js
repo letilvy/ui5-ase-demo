@@ -4,9 +4,9 @@ sap.ui.define([
 	'sap/ui/core/mvc/Controller',
 	'sap/ui/core/routing/History'
 ], function (Controller, History) {
-	'use strict';
+	"use strict";
 
-	return Controller.extend('sap.ui.demo.bulletinboard.controller.BaseController', {
+	return Controller.extend("sap.ui.demo.bulletinboard.controller.BaseController", {
 
 		/**
 		 * Convenience method for accessing the event bus.
@@ -53,7 +53,7 @@ sap.ui.define([
 		 * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
 		 */
 		getResourceBundle: function () {
-			return this.getOwnerComponent().getModel('i18n').getResourceBundle();
+			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
 		},
 
 		/**
