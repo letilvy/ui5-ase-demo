@@ -29,8 +29,7 @@ sap.ui.define([
 				worklistTableTitle: this.getResourceBundle().getText("worklistTableTitle"),
 				shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
 				shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage"),
-				tableBusyDelay: 0,
-				mode: "MultiSelect"
+				tableBusyDelay: 0
 			});
 			this.getView().setModel(oViewModel, "worklistView");
 
@@ -41,17 +40,14 @@ sap.ui.define([
 		},
 
 		onUpdateFinished: function (oEvent) {
-			// Exercise 1
-			var iCount = oEvent.getParameter("total");
-
+			var iTotalCount = oEvent.getParameter("total");
 			var oViewModel = this.getViewModel();
-			if (iCount !== 0) {
-				var sTableTitle = this.getResourceBundle().getText("worklistTableTitleCount", [iCount]);
-			} else {
-				sTableTitle = this.getResourceBundle().getText("worklistTableTitle");
-			}
+
+			var sTableTitle = iTotalCount === 0 ? this.getResourceBundle().getText("worklistTableTitle") :
+				this.getResourceBundle().getText("worklistTableTitleCount", iTotalCount);
 
 			oViewModel.setProperty("/worklistTableTitle", sTableTitle);
+
 		},
 
 		onPress: function (oEvent) {
