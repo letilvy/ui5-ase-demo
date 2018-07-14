@@ -41,6 +41,9 @@
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": "sap.ui.demo.bulletinboard.view.App",
+		"resources": {
+            "css": [{"uri": "css/TDDKata.css"}]
+        },
 		"dependencies": {
 			"minUI5Version": "1.30.0",
 			"libs": {
@@ -78,11 +81,6 @@
 					"pattern": "",
 					"name": "worklist",
 					"target": "worklist"
-				},
-				{
-					"pattern": "Post/{postId}",
-					"name": "post",
-					"target": "post"
 				}
 
 			],
@@ -91,11 +89,6 @@
 					"viewName": "Worklist",
 					"viewId": "worklist",
 					"viewLevel": 1
-				},
-				"post": {
-					"viewName": "Post",
-					"viewId": "post",
-					"viewLevel": 2
 				}
 			}
 

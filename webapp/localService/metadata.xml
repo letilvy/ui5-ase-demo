@@ -45,7 +45,7 @@
 				<Property MaxLength="60" Name="Date" Nullable="false" Type="Edm.DateTime" sap:creatable="false" sap:label="Date" sap:sortable="true"
 					sap:updatable="false"/>
 			</EntityType>
-			<Association sap:content-version="1" Name="PostToComment">
+			<Association sap:content-version="1"  Name="PostToComment"  >
 				<End Type="BULLETINBOARD.Post" Multiplicity="1" Role="FromRole_PostToComment" />
 				<End Type="BULLETINBOARD.Comment" Multiplicity="*" Role="ToRole_PostToComment" />
 				<ReferentialConstraint>
@@ -58,7 +58,7 @@
 				</ReferentialConstraint>
 			</Association>
 			<EntityContainer Name="BULLETINBOARD_ENTITIES" m:IsDefaultEntityContainer="true">
-				<EntitySet EntityType="BULLETINBOARD.Post" Name="Posts" sap:content-version="1" sap:creatable="false" sap:deletable="false"
+				<EntitySet EntityType="BULLETINBOARD.Post" Name="Posts" sap:content-version="1" sap:creatable="true" sap:deletable="false"
 					sap:pageable="false" sap:updatable="false" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
 				<EntitySet EntityType="BULLETINBOARD.Category" Name="Categories" sap:content-version="1" sap:creatable="false" sap:deletable="false"
 					sap:pageable="false" sap:updatable="false" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>

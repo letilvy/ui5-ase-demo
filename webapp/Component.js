@@ -1,15 +1,12 @@
 sap.ui.define([
-	'sap/ui/core/UIComponent',
-	'sap/ui/model/resource/ResourceModel',
-	'sap/ui/demo/bulletinboard/model/models',
-	'sap/ui/Device'
-], function (UIComponent, ResourceModel, models, Device) {
-	"use strict";
+	'sap/ui/core/UIComponent'
+], function (UIComponent) {
+	'use strict';
 
-	return UIComponent.extend("sap.ui.demo.bulletinboard.Component", {
+	return UIComponent.extend('sap.ui.demo.bulletinboard.Component', {
 
 		metadata: {
-			manifest: "json"
+			manifest: 'json'
 		},
 
 		/**
@@ -22,12 +19,6 @@ sap.ui.define([
 
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
-
-			// allow saving values to the OData model
-			this.getModel().setDefaultBindingMode("TwoWay");
-
-			// set the device model
-			this.setModel(models.createDeviceModel(), "device");
 
 			// create the views based on the url/hash
 			this.getRouter().initialize();
