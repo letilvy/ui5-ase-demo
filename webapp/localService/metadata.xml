@@ -20,6 +20,7 @@
 				<Property Name="Price" Nullable="false" Precision="23" Scale="4" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
 					sap:label="Unit Number" sap:updatable="false"/>
 				<Property Name="Flagged" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="Favorite" Nullable="false" Type="Edm.Boolean"/>
 				<NavigationProperty Name="Comments" ToRole="ToRole_PostToComment" FromRole="FromRole_PostToComment" Relationship="BULLETINBOARD.PostToComment"/>
 			</EntityType>
 

@@ -5,6 +5,7 @@
 	xmlns:form="sap.ui.layout.form"
 	controllerName="sap.ui.demo.bulletinboard.controller.Post" 
 	xmlns:semantic="sap.m.semantic">
+
 	<semantic:FullscreenPage
 			id="page"
 			busy="{postView>/busy}"
@@ -23,12 +24,19 @@
 				title="{Title}"
 				responsive="true"
 				number="{Price}"
-				numberUnit="{Currency}">
+				numberUnit="{Currency}"
+				showMarkers="true"
+				markFavorite="{Favorite}">
+			    <!-- 
+				// Bug of UI5 that visibility of ObjectMarker does not take effect when data binding change.
+				// So we switch back to use deprecated attribute 'markFavorite'
+				// Should use 'ObjectMarker' after UI5 fix the bug
 			    <markers>
 			        <ObjectMarker
 			            visible="{Favorite}"
+			            visibility="IconOnly"
 			            type="Favorite" />
-			    </markers>
+			    </markers> -->
 			</ObjectHeader>
 			<IconTabBar id="iconTabBar"
 				expanded="{device>/isNoPhone}"
