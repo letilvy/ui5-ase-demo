@@ -40,9 +40,7 @@
 				</columns>
 				<items>
 					<ColumnListItem
-							vAlign="Middle"
-							type="Navigation"
-							press="onPress">
+							vAlign="Middle">
 						<cells>
 							<ObjectIdentifier
 									title="{Title}"/>

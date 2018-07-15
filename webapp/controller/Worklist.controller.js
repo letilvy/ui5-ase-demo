@@ -76,15 +76,6 @@ sap.ui.define([
 			this.getModel("worklistView").setProperty("/worklistTableTitle", sTitle);
 		},
 
-		/**
-		 * Event handler when a table item gets pressed
-		 * @param {sap.ui.base.Event} oEvent the table selectionChange event
-		 * @public
-		 */
-		onPress: function (oEvent) {
-
-		},
-
 		/* =========================================================== */
 		/* internal methods                                            */
 		/* =========================================================== */
@@ -101,19 +92,6 @@ sap.ui.define([
 				sTitle = this.getResourceBundle().getText("worklistTableTitleCount", [iTotalItems]);
 				this.oViewModel.setProperty("/worklistTableTitle", sTitle);
 			}
-		},
-
-		/**
-		 * Event handler when the share by E-Mail button has been clicked
-		 * @public
-		 */
-		onShareEmailPress: function () {
-			var oViewModel = this.getModel("worklistView");
-			sap.m.URLHelper.triggerEmail(
-				null,
-				oViewModel.getProperty("/shareSendEmailSubject"),
-				oViewModel.getProperty("/shareSendEmailMessage")
-			);
 		}
 	});
 
