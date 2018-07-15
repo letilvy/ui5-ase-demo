@@ -5,9 +5,9 @@ sap.ui.define(["sap/ui/base/Object", "sap/ui/core/format/DateFormat"],
 		return Object.extend("sap.ui.demo.bulletinboard.model.DateFormatter", {
 			constructor: function() {
 			},
-      
+
 			format: function(oDate) {
-          return "";
+				return "";
 			}
 		});
 	});
