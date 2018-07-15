@@ -13,7 +13,7 @@ show 'Remove favorite' message toast when the button is toggled unpressed
 ![alt tag](https://user-images.githubusercontent.com/31752565/42722703-6cfda032-8783-11e8-91c3-d336b5f1ed20.png)
 
 ### Exercise 2 - update favorite property
-add a favorite icon and adjust the favorite toggle button to show if the product is marked as favorite (property 'Favorite')</br>
+add a favorite icon (refer to ObjectHeader API-property markFavorite) and adjust the favorite toggle button to show if the product is marked as favorite (property 'Favorite')</br>
 add or remove favorite when clicking the toggle favorite button</br>
 show 'success' message toast when updating successfully, 'error' message box when error 
 
