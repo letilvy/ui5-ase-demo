@@ -1,16 +1,16 @@
 /*global history*/
 
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
+	"sap/ui/demo/bulletinboard/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/demo/bulletinboard/model/formatter",
 	"sap/ui/demo/bulletinboard/model/FlaggedType",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator"
-], function (Controller, JSONModel, formatter, FlaggedType, Filter, FilterOperator) {
+], function (BaseController, JSONModel, formatter, FlaggedType, Filter, FilterOperator) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.bulletinboard.controller.Worklist", {
+	return BaseController.extend("sap.ui.demo.bulletinboard.controller.Worklist", {
 		types: {
 			flagged: new FlaggedType()
 		},
@@ -52,10 +52,6 @@ sap.ui.define([
 
 		onShareEmailPress: function () {
 			// Exercise 2
-		},
-
-		getResourceBundle: function () {
-			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
 		}
 
 	});

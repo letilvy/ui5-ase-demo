@@ -1,7 +1,7 @@
 /*global history*/
 
 sap.ui.define([
-	"sap/ui/core/mvc/Controller" 
+	"sap/ui/core/mvc/Controller"
 ], function (Controller) {
 	"use strict";
 
@@ -12,8 +12,8 @@ sap.ui.define([
 		 * @public
 		 * @returns {sap.ui.core.routing.Router} the router for this component
 		 */
-		getRouter: function () { 
-			
+		getRouter: function () {
+
 		},
 
 		/**
@@ -22,7 +22,8 @@ sap.ui.define([
 		 * @param {string} [sName] the model name
 		 * @returns {sap.ui.model.Model} the model instance
 		 */
-		getModel: function ( ) {  
+		getModel: function (sName) {
+			return this.getView().setModel(sName);
 		},
 
 		/**
@@ -42,7 +43,7 @@ sap.ui.define([
 		 * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
 		 */
 		getResourceBundle: function () {
-			// return this.getOwnerComponent().getModel("i18n").getResourceBundle();
+			 return this.getOwnerComponent().getModel("i18n").getResourceBundle();
 		},
 
 		/**
@@ -53,10 +54,9 @@ sap.ui.define([
 		 * @param {string} sRoute the name of the route if there is no history entry
 		 * @param {object} mData the parameters of the route, if the route does not need parameters, it may be omitted.
 		 */
-		myNavBack: function ( ) {
+		myNavBack: function () {
 
 		}
-
 
 	});
 
