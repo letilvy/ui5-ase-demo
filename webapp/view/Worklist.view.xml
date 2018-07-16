@@ -4,7 +4,7 @@
 		<semantic:content>
 			<Table id="table" width="auto" class="sapUiResponsiveMargin" growing="true"
 				items="{ path: '/Posts', sorter: { path: 'Title', descending: false } }" busyIndicatorDelay="{worklistView>/tableBusyDelay}"
-				mode="MultiSelect" updateFinished="onUpdateFinished">
+				mode="MultiSelect" updateFinished="onUpdateFinished" selectionChange="onListSelectionChange">
 				<headerToolbar>
 					<Toolbar>
 						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>

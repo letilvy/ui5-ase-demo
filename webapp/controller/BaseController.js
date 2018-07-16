@@ -22,7 +22,8 @@ sap.ui.define([
 		 * @param {string} [sName] the model name
 		 * @returns {sap.ui.model.Model} the model instance
 		 */
-		getModel: function ( ) {  
+		getModel: function (sName) {  
+			return this.getOwnerComponent().getModel(sName);
 		},
 
 		/**
@@ -33,7 +34,7 @@ sap.ui.define([
 		 * @returns {sap.ui.mvc.View} the view instance
 		 */
 		setModel: function (oModel, sName) {
-			return this.getView().setModel(oModel, sName);
+			return this.getOwnerComponent().setModel(oModel, sName);
 		},
 
 		/**
@@ -42,7 +43,7 @@ sap.ui.define([
 		 * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
 		 */
 		getResourceBundle: function () {
-			// return this.getOwnerComponent().getModel("i18n").getResourceBundle();
+			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
 		},
 
 		/**
@@ -56,8 +57,6 @@ sap.ui.define([
 		myNavBack: function ( ) {
 
 		}
-
-
 	});
 
 });
