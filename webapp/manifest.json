@@ -76,7 +76,7 @@
 				"name": "worklist",
 				"target": "worklist"
 			}, {
-				"pattern": "Post/{postId}/infotype:?query:",
+				"pattern": "Post/{postId}/{infotype}",
 				"name": "post",
 				"target": "post"
 			}],

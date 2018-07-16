@@ -32,8 +32,8 @@ sap.ui.require(
 		opaTest("Should see view statistics of 'PostID_15'  when a user start app with given hash", function (Given, When, Then) {
 			// Arrangements
 			Given.iStartMyApp({
-				delay: 0,
-				hash: "/Post/PostID_15/infotype?tab=statistics"
+				delay: 100,
+				hash: "/Post/PostID_15/statistics"
 			});
 
 			// Assertions

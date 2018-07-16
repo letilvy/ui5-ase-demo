@@ -48,9 +48,7 @@ sap.ui.define([
 			this.getRouter().navTo("post", {
 				// The source is the list item that got pressed
 				postId: oCtx.getProperty("PostID"),
-				query: {
-					tab: oEvent.getParameter("selectedKey")
-				}
+				infotype: oEvent.getParameter("selectedKey")
 			}, true);
 
 		},
@@ -66,7 +64,9 @@ sap.ui.define([
 		 * @private
 		 */
 		_onPostMatched: function (oEvent) {
-			var oArgs, oQuery;
+
+			var oArgs, oInfoType;
+
 			var oViewModel = this.getModel("postView"),
 				oDataModel = this.getModel();
 
@@ -91,9 +91,10 @@ sap.ui.define([
 			var _aValidTabKeys = ["info", "statistics"];
 
 			oArgs = oEvent.getParameter("arguments");
-			oQuery = oArgs["?query"];
-			if (oQuery && _aValidTabKeys.indexOf(oQuery.tab) > -1) {
-				oViewModel.setProperty("/selectedKey", oQuery.tab);
+			oInfoType = oArgs.infotype;
+
+			if (oInfoType && _aValidTabKeys.indexOf(oInfoType) > -1) {
+				oViewModel.setProperty("/selectedKey", oInfoType);
 			} else {
 				// the default query param should be visible at all time
 				this.getRouter().navTo("worklist");

@@ -93,9 +93,7 @@ sap.ui.define([
 			this.getRouter().navTo("post", {
 				// The source is the list item that got pressed
 				postId: oEvent.getSource().getBindingContext().getProperty("PostID"),
-				query: {
-					tab: "info"
-				}
+				infotype: "info"
 			}, true);
 
 		},
