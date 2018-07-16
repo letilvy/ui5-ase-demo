@@ -15,7 +15,7 @@ Demo App for UI5 ASE Training
    others, show Error state.
    
    
- # Part 2 - Date Formatter:
+ # (Optional)Part 2 - Date Formatter:
  Formats a date into something readable
  
  1. today - a time format
