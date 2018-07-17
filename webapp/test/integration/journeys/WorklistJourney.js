@@ -3,7 +3,7 @@ sap.ui.require(
 	function (opaTest) {
 		"use strict";
 
-		QUnit.module("Posts");
+		QUnit.module("Worklist");
 
 		opaTest("Should see the table with all Posts", function (Given, When, Then) {
 			// Arrangements
