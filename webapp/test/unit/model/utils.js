@@ -10,13 +10,13 @@ sap.ui.require(
 		
 		/*QUnit.module("Sinon - difference between stub and spy");
 		
-		QUnit.test("Should show warning message box when error code is even", function(assert){
+		QUnit.test("When error code is even, then show warning message box", function(assert){
 			this.stub(MessageBox, "show");
 			utils.errorHandler(2);
 			assert.strictEqual(MessageBox.show.getCall(0).args[1].icon, "WARNING", "Message box type is correct");
 		});
 		
-		QUnit.test("Should show error message box when error code is odd", function(assert){
+		QUnit.test("When error code is odd, then show error message box", function(assert){
 			var oSpy = this.spy(MessageBox, "show");
 			utils.errorHandler(3);
 			//assert.strictEqual(MessageBox.show.getCall(0).args[1].icon, "ERROR", "Message box type is correct");
