@@ -4,16 +4,17 @@ sap.ui.require(
 		"sap/ui/model/odata/v2/ODataModel",
 		"sap/m/MessageBox",
 		"sap/m/MessageToast",
+		"sap/ui/base/Event",
 		"sap/ui/thirdparty/sinon",
 		"sap/ui/thirdparty/sinon-qunit"
 	],
-	function (Post, ODataModel,MessageBox,MessageToast) {
+	function (Post, ODataModel,MessageBox,MessageToast,Event) {
 		"use strict";
 		
 		QUnit.module("add and remove favorite",{
 		    beforeEach: function() {
     			this.post = new Post();
-			    sinon.stub(this.post, "getModel").returns(new ODataModel(""));
+			    //sinon.stub(this.post, "getModel").returns(new ODataModel(""));
     		},
     		afterEach: function() {
     			this.post.destroy();
@@ -25,7 +26,7 @@ sap.ui.require(
 			this.stub(MessageToast, "show");
 
 			//Action
-			this.post.onPressFavoriteBtn(new sap.ui.base.Event(null, null, {
+			this.post.onPressFavoriteBtn(new Event(null, null, {
 				pressed: true
 			}));
 
@@ -38,7 +39,7 @@ sap.ui.require(
 			this.stub(MessageToast, "show");
 
 			//Action
-			this.post.onPressFavoriteBtn(new sap.ui.base.Event(null, null, {
+			this.post.onPressFavoriteBtn(new Event(null, null, {
 				pressed: false
 			}));
 
