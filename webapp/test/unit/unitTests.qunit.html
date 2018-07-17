@@ -18,7 +18,13 @@
 		jQuery.sap.require("sap.ui.thirdparty.qunit-2");
 		jQuery.sap.require("sap.ui.qunit.qunit-2-css");
 		jQuery.sap.require("sap.ui.qunit.qunit-junit");
-		jQuery.sap.require("sap.ui.qunit.qunit-coverage");
+		/*jQuery.sap.require("sap.ui.qunit.qunit-coverage");
+		
+		if(window.blanket){
+		    window.blanket.options("sap-ui-cover-only",["sap/ui/demo/bulletinboard"]);
+		    window.blanket.options("sap-ui-cover-never",["test/"]);
+		    window.blanket.options("sap-ui-cover-never",["localService/"]);
+		}*/
 
 		QUnit.config.autostart = false;
 
