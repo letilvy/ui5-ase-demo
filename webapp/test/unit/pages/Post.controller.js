@@ -2,13 +2,13 @@ sap.ui.require(
 	[
 		"sap/ui/demo/bulletinboard/controller/Post.controller",
 		"sap/ui/model/odata/v2/ODataModel",
-		"sap/m/MessageBox",
 		"sap/m/MessageToast",
 		"sap/ui/base/Event",
+		"sap/m/semantic/FavoriteAction",
 		"sap/ui/thirdparty/sinon",
 		"sap/ui/thirdparty/sinon-qunit"
 	],
-	function (Post, ODataModel,MessageBox,MessageToast,Event) {
+	function (Post, ODataModel,MessageToast,Event,FavoriteAction) {
 		"use strict";
 		
 		QUnit.module("add and remove favorite",{
@@ -39,6 +39,7 @@ sap.ui.require(
 			this.stub(MessageToast, "show");
 
 			//Action
+			//var oButton = new FavoriteAction({pressed:false});
 			this.post.onPressFavoriteBtn(new Event(null, null, {
 				pressed: false
 			}));
