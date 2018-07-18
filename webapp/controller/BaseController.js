@@ -23,7 +23,7 @@ sap.ui.define([
 		 * @returns {sap.ui.model.Model} the model instance
 		 */
 		getModel: function (sName) {
-			return this.getView().setModel(sName);
+			return this.getView().getModel(sName);
 		},
 
 		/**
