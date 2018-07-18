@@ -1,4 +1,4 @@
-# Exercise: Controller Testing
+# Exercise: Mock Server
 ### 1. Make the mock server return new column 'Quantity' and display in UI 
 
 You can give any number to each item as its quantity.
