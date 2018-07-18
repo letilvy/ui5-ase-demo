@@ -24,12 +24,25 @@ sap.ui.define([
 			},
 
 			iStartMyApp: function (oOptions) {
+				this.iStartMyAppWithComponent(oOptions);
+			},
+
+			iStartMyAppWithFrame: function (oOptions) {
 				var sUrlParameters;
 				oOptions = oOptions || { delay: 0 };
 
 				sUrlParameters = "serverDelay=" + oOptions.delay;
 
 				this.iStartMyAppInAFrame(getFrameUrl(oOptions.hash, sUrlParameters));
+			},
+
+			iStartMyAppWithComponent: function (oOptions) {
+				this.iStartMyUIComponent({
+					componentConfig: {
+						name: "sap.ui.demo.bulletinboard"
+					},
+					hash: oOptions && oOptions.hash
+				});
 			},
 
 			iLookAtTheScreen: function () {
