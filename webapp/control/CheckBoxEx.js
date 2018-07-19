@@ -8,7 +8,7 @@ sap.ui.define([
 	var CheckBoxEx = CheckBox.extend("sap.ui.demo.bulletinboard.control.CheckBoxEx", { 
 		metadata: {
 			properties: {
-				selected: {type: "boolean", group: "Data", defaultValue: true}
+				// selected: {type: "boolean", group: "Data", defaultValue: true}
 			}
 		},
 
