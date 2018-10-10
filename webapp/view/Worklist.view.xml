@@ -7,11 +7,6 @@
 		id="page"
 		title="{i18n>worklistViewTitle}">
 		<semantic:content>
-<<<<<<< HEAD
-			<FlexBox height="100px" alignItems="Start" justifyContent="Center" class="tddKataTitleContainer">
-				<items>
-					<Title class="tddKataTitle" text="{path: 'worklistView>/userName',formatter: '.formatter.greeter'}" level="H1" />
-=======
 			<Table
 				id="table"
 				width="auto"
@@ -76,9 +71,8 @@
 								class="sapUiMediumMarginBeginEnd"/>
 						</cells>
 					</ColumnListItem>
->>>>>>> parent of 7aec8b9... Merge pull request #3 from letilvy/kata
 				</items>
-			</FlexBox>
+			</Table>
 		</semantic:content>
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>

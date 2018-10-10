@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-sap.ui.define([
-	'sap/ui/demo/bulletinboard/controller/BaseController',
-	'sap/ui/model/json/JSONModel',
-	'sap/ui/demo/bulletinboard/model/formatter'
-], function (BaseController, JSONModel, formatter) {
-	'use strict';
-
-	return BaseController.extend('sap.ui.demo.bulletinboard.controller.Worklist', {
-
-		formatter: formatter,
-
-=======
 /*global history*/
 
 sap.ui.define([
@@ -34,21 +21,11 @@ sap.ui.define([
 		/* lifecycle methods                                           */
 		/* =========================================================== */
 
->>>>>>> parent of 7aec8b9... Merge pull request #3 from letilvy/kata
 		/**
 		 * Called when the worklist controller is instantiated.
 		 * @public
 		 */
 		onInit: function () {
-<<<<<<< HEAD
-			var oViewModel;
-
-			// Model used to manipulate control states
-			oViewModel = new JSONModel({
-				userName: 'Richard Gong'
-			});
-			this.setModel(oViewModel, 'worklistView');
-=======
 			var oViewModel,
 				iOriginalBusyDelay,
 				oTable = this.byId("table");
@@ -167,7 +144,6 @@ sap.ui.define([
 				oViewModel.getProperty("/shareSendEmailSubject"),
 				oViewModel.getProperty("/shareSendEmailMessage")
 			);
->>>>>>> parent of 7aec8b9... Merge pull request #3 from letilvy/kata
 		}
 	});
 

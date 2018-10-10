@@ -1,15 +1,4 @@
 sap.ui.define([
-<<<<<<< HEAD
-	'sap/ui/demo/bulletinboard/model/Greeter'
-], function (Greeter) {
-	'use strict';
-
-	return {
-		greeter: function (sName) {
-			var oGreeter = new Greeter();
-
-			return oGreeter.greet(sName);
-=======
 	"sap/ui/demo/bulletinboard/model/DateFormatter"
 ], function (DateFormatter) {
 	"use strict";
@@ -58,7 +47,6 @@ sap.ui.define([
 		 */
 		date: function(oDate) {
 			return new DateFormatter({ now: Date.now }).format(oDate);
->>>>>>> parent of 7aec8b9... Merge pull request #3 from letilvy/kata
 		}
 };
 
