@@ -24,7 +24,7 @@ sap.ui.require(
 			When.onThePostPage.iPressTheBackButton();
 
 			// Assertions
-			Then.onTheWorklistPage.iShouldSeeTheTable().and.iTeardownMyAppFrame();
+			Then.onTheWorklistPage.iShouldSeeTheTable().and.iTeardownMyApp();
 		});
 
 		QUnit.module("Post - start from post detail page");
@@ -37,7 +37,7 @@ sap.ui.require(
 			});
 
 			// Assertions
-			Then.onThePostPage.theTitleShouldDisplayTheName("Jeans").and.theIconViewInfoIsSelected().and.iTeardownMyAppFrame();
+			Then.onThePostPage.theTitleShouldDisplayTheName("Jeans").and.theIconViewInfoIsSelected().and.iTeardownMyApp();
 
 		});
 

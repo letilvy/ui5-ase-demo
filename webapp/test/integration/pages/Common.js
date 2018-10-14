@@ -31,7 +31,15 @@ sap.ui.define([
 
 				sUrlParameters = "serverDelay=" + oOptions.delay;
 
-				this.iStartMyAppInAFrame(getFrameUrl(oOptions.hash, sUrlParameters));
+				// this.iStartMyAppInAFrame(getFrameUrl(oOptions.hash, sUrlParameters));
+
+				this.iStartMyUIComponent({
+					componentConfig: {
+						name: "sap.ui.demo.bulletinboard"
+					},
+					hash: oOptions.hash
+				});
+
 			},
 
 			iLookAtTheScreen: function () {

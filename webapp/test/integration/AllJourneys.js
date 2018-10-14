@@ -22,9 +22,11 @@ sap.ui.require([
 	});
 
 	sap.ui.require([ 
+		"sap/ui/demo/bulletinboard/localService/mockserver",
 		"sap/ui/demo/bulletinboard/test/integration/WorklistJourney",
 		"sap/ui/demo/bulletinboard/test/integration/PostJourney"
-	], function () {
+	], function (mockserver) {
+		mockserver.init();
 		QUnit.start();
 	});
 });
