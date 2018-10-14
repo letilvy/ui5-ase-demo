@@ -1,10 +1,13 @@
 # Exercise: OPA5 
 ### 1. Simple Navigation
+
 Please write some OPA5 test cases to cover the single post navigation function 
 
 e.g. 
 
+
 When you click on post 'Car Tires, 22 Inch', then the detail page of this post should display
+
 ![image](https://user-images.githubusercontent.com/23159761/42684666-5f4184ba-86c3-11e8-87cf-522dc1b835aa.png)
 ![image](https://user-images.githubusercontent.com/23159761/42684688-698db9ca-86c3-11e8-90a9-639572ad9e65.png)
 
