@@ -12,18 +12,23 @@ When you click on post 'Car Tires, 22 Inch', then the detail page of this post s
      
      
 ### 2. Start APP from the page of given hash value 
-Please write some OPA5 test cases to start your APP from given hash value directly. 
+Please write some OPA5 test cases to:
 
-The 'hash' function is not available now, so you need to define the routing pattern and implement it after the OPA tests are ready.
+     1. start your APP from Component( Opa5.iStartMyUIComponent )
+    
+     2. start your APP with one of detailed post page dispalyed directly
 
-e.g. 
+Hint:
 
-In worklist page, if you add hash '#/Post/PostID_9/infotype?tab=statistics' to the end of URL,
-then the detail page of post with icon 'view statistics' selected should display as expected:
-
-![image](https://user-images.githubusercontent.com/23159761/42684306-3e943b64-86c2-11e8-95b2-843c6c9238ed.png)
-
-![image](https://user-images.githubusercontent.com/23159761/42684596-1c88c516-86c3-11e8-8caf-67407f714b3d.png)
+     1. iStartMyAppInAFrame() -> iStartMyUIComponent
+     
+     2. make sure that test framework can find UIComponent of this appication
+     
+     3. mockserver should be ready before start to run test cases
+     
+     4. if not able to load mock data, maybe you should specify one of configuration parameter: 
+     
+          data-sap-ui-bindingSyntax = 'complex'
 
 
  
