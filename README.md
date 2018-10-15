@@ -1,4 +1,4 @@
-# Exercise: Controller Testing
+# Exercise: Mock Server
 ### 1. Make the mock server return new column 'Quantity' and display in UI 
 
 You can give any number to each item as its quantity.
@@ -14,6 +14,6 @@ It is highly recommanded to give one or more itmes( not all ) with quantity bigg
 
 Make the mock server return items with quantity bigger than 104 only.
 
-If none of the quantities in exercise 1 is bigger than 104, then 'No data' is expected to display in UI.
+If none of the quantities in exercise 1 is bigger than 104, then 'No data' should display in UI as expected.
 
  
