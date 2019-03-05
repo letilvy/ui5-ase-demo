@@ -8,7 +8,7 @@
 
 	
 	
-	b. If there is no itme in table, then the title should display 'Posts', not 'Posts (0)'
+	b. If there is no item in table, then the title should display 'Posts', not 'Posts (0)'
 
 
 
