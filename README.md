@@ -2,7 +2,7 @@
 
 ### 1. Enhance table title(DEMO)
 
-	a. Make the table title display conut of items as below:
+	a. Make the table title display count of items as below:
 	
 ![alt tag](https://user-images.githubusercontent.com/23159761/42492843-2cfafefa-844d-11e8-88dd-09b23f1c1fae.png)
 
