@@ -10,7 +10,7 @@ sap.ui.require(
 	],
 	function (Post, ODataModel,MessageToast,Event,FavoriteAction) {
 		"use strict";
-		
+
 		QUnit.module("add and remove favorite",{
 		    beforeEach: function() {
     			this.post = new Post();
@@ -20,33 +20,6 @@ sap.ui.require(
     			this.post.destroy();
     		}
     	});
-
-		QUnit.test("Should show 'Mask as favorite' when toggle the favorite button", function(assert){
-			//Arrangement
-			this.stub(MessageToast, "show");
-
-			//Action
-			this.post.onPressFavoriteBtn(new Event(null, null, {
-				pressed: true
-			}));
-
-			//Assertion
-			assert.strictEqual(MessageToast.show.getCall(0).args[0], "Mark as favorite");
-		});
-
-		QUnit.test("Should show 'Remove favorite' when toggle the favorite button", function(assert){
-			//Arrangement
-			this.stub(MessageToast, "show");
-
-			//Action
-			//var oButton = new FavoriteAction({pressed:false});
-			this.post.onPressFavoriteBtn(new Event(null, null, {
-				pressed: false
-			}));
-
-			//Assertion
-			assert.strictEqual(MessageToast.show.getCall(0).args[0], "Remove favorite");
-		});
 		
 		/*QUnit.test("Should show warning message box when updating favorite error", function(assert){
 			this.stub(MessageBox, "error");

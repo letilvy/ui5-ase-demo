@@ -1,6 +1,7 @@
 sap.ui.define([
-	'sap/m/MessageBox'
-], function (MessageBox) {
+	'sap/m/MessageBox',
+	"sap/m/MessageToast"
+], function (MessageBox,MessageToast) {
 	"use strict";
 
 	return {
@@ -15,6 +16,14 @@ sap.ui.define([
 				title: "My message box title",
         		actions: [sap.m.MessageBox.Action.OK]
 			 });
+		},
+
+		favoriteHandler:function(bPressed){
+			if(bPressed){
+		    	MessageToast.show("Mark as favorite");
+		    }else{
+		    	MessageToast.show("Remove favorite");
+		    }
 		}
 	};
 

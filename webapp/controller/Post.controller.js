@@ -3,8 +3,9 @@ sap.ui.define([
                'sap/ui/model/json/JSONModel',
                'sap/ui/demo/bulletinboard/model/formatter',
                "sap/m/MessageToast",
-               "sap/m/MessageBox"
-	], function(BaseController, JSONModel, formatter,MessageToast,MessageBox){
+               "sap/m/MessageBox",
+               "sap/ui/demo/bulletinboard/model/utils"
+	], function(BaseController, JSONModel, formatter,MessageToast,MessageBox,utils){
 	
 	"use strict";
 	
@@ -22,11 +23,7 @@ sap.ui.define([
 		},
 
 		onPressFavoriteBtn: function(oEvent){
-		    if(oEvent.getParameter("pressed")){
-		    	MessageToast.show("Mark as favorite");
-		    }else{
-		    	MessageToast.show("Remove favorite");
-		    }
+			utils.favoriteHandler(oEvent.getParameter("pressed"));
 		    
 		    /*this.getModel().submitChanges({
 		        success:function(){
