@@ -1,8 +1,9 @@
 sap.ui.define([
                'sap/ui/demo/bulletinboard/controller/BaseController',
                'sap/ui/model/json/JSONModel',
-               'sap/ui/demo/bulletinboard/model/formatter'
-	], function(BaseController, JSONModel, formatter){
+               'sap/ui/demo/bulletinboard/model/formatter',
+               'sap/ui/demo/bulletinboard/model/utils'
+	], function(BaseController, JSONModel, formatter, utils){
 	
 	"use strict";
 	
@@ -17,6 +18,10 @@ sap.ui.define([
 			this.setModel(oViewModel, "postView");
 			this.getRouter().getRoute("post").attachPatternMatched(this._onPostMatched, this);
 		},
+
+		/*onPressFavoriteBtn:function(oEvent){
+			utils.favoriteHandler(oEvent.getParameter("pressed"));
+		},*/
 		
 		onNavBack: function(){
 			this.myNavBack("worklist");
