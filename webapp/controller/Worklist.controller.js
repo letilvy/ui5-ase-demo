@@ -29,9 +29,10 @@ sap.ui.define([
 				worklistTableTitle: this.getResourceBundle().getText("worklistTableTitle"),
 				shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
 				shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage"),
-				tableBusyDelay: 0
+				tableBusyDelay: 0,
+				selectedPosts: []
 			});
-			this.getView().setModel(oViewModel, "worklistView");
+			this.setModel(oViewModel, "worklistView");
 
 			oTable.attachEventOnce("updateFinished", function () {
 				// Restore original busy indicator delay for worklist's table
@@ -40,20 +41,36 @@ sap.ui.define([
 		},
 
 		onUpdateFinished: function (oEvent) {
-			// Exercise 1
+			//var iTotalCount = oEvent.getParameter("total");
+			//exercise 1
 		},
 
 		onPress: function (oEvent) {
 			sap.ui.core.UIComponent.getRouterFor(this).navTo("post", {
 				postId: oEvent.getSource().getBindingContext().getProperty("PostID")
 			});
+		},
 
+		onListSelectionChange: function (oEvent) {
+			var oTable = oEvent.getSource();
+			var aTableSelected = oTable.getSelectedItems();
+
+			var aSelectedItems = [];
+			aTableSelected.forEach(function (oItem) {
+
+				aSelectedItems.push({
+					Title: oItem.getBindingContext().getProperty("Title"),
+					Price: oItem.getBindingContext().getProperty("Price"),
+					Currency: oItem.getBindingContext().getProperty("Currency")
+				});
+			});
+
+			this.getModel("worklistView").setProperty("/selectedPosts", aSelectedItems);
 		},
 
 		onShareEmailPress: function () {
-			// Exercise 2
+			//sap.m.URLHelper.triggerEmail("", sEmailSubject, sEmailMessage);
+			//exercise 2
 		}
-
 	});
-
 });
