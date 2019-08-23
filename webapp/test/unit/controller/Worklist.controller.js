@@ -1,7 +1,8 @@
 sap.ui.require([
 	"sap/ui/demo/bulletinboard/controller/Worklist.controller",
-	"sap/ui/model/resource/ResourceModel"
-], function (WorklistController, ResourceModel) {
+	"sap/ui/model/resource/ResourceModel",
+	"sap/ui/model/json/JSONModel"
+], function (WorklistController, ResourceModel, JSONModel) {
 	"use strict";
 	QUnit.module("Worklist Controller", {
 		before: function () {
