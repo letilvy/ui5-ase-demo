@@ -3,12 +3,12 @@ sap.ui.define([
 	'sap/ui/model/json/JSONModel',
 	'sap/ui/core/routing/History',
 	'sap/m/MessageBox'
-], function(BaseController, JSONModel, History, MessageBox) {
+], function(BaseController, JSONModel, History, MessageBox){
 	"use strict";
 
 	return BaseController.extend("sap.ui.demo.bulletinboard.controller.PostCreate", {
 
-		onInit: function () {
+		onInit: function(){
 			this._bChangeFlag = false;
 			var oViewModel = new JSONModel({
 				busy: false,
@@ -21,14 +21,14 @@ sap.ui.define([
 			this._bChangeFlag = true;
 		},
 
-		onNavBack: function () {
+		onNavBack: function(){
 			if(this._bChangeFlag){
 				MessageBox.show("Warning", {
 					icon: "WARNING",
 					title: "Are you sure to drop draft?",
 					actions: [sap.m.MessageBox.Action.OK, sap.m.MessageBox.Action.CANCEL],
-					onClose: function(oAction) {
-						if (oAction === sap.m.MessageBox.Action.OK) {
+					onClose: function(oAction){
+						if(oAction === sap.m.MessageBox.Action.OK){
 							this.myNavBack("worklist");
 						}
 					}.bind(this)
@@ -48,7 +48,7 @@ sap.ui.define([
 
 		_validateUserInput: function(){
 			var mInput = this.getUserInput();
-			if(!mInput.Title.match(/^\w+$/) ||
+			if(!mInput.Title.match(/^[\w ]+$/) ||
 				!mInput.Price.match(/^[1-9]{1}\d*$/) ||
 				!mInput.Category){
 				return false;
@@ -58,9 +58,9 @@ sap.ui.define([
 			return $.extend(mInput,{Currency:"USD",Timestamp:new Date()});
 		},
 
-		onSavePost: function() {
+		onSavePost: function(){
 			var vRes = this._validateUserInput();
-			if (!vRes) {
+			if(!vRes){
 				MessageBox.show("Validation Error", {
 					icon: "ERROR",
 					title: "You have validation error",
@@ -74,7 +74,7 @@ sap.ui.define([
 
 			var oDataModel = this.getModel();
 			oDataModel.create("/Posts", vRes, {
-				success: function() {
+				success: function(){
 					oViewModel.setProperty("/busy", false);
 					this._bChangeFlag = false;
 					MessageBox.show("Success", {
@@ -84,7 +84,7 @@ sap.ui.define([
 						onClose: this.myNavBack.bind(this, "worklist")
 					});
 				}.bind(this),
-				error: function() {
+				error: function(){
 					MessageBox.show("Save Error", {
 						icon: "ERROR",
 						title: "Create post failed",
@@ -94,7 +94,7 @@ sap.ui.define([
 			});
 		},
 
-		onCancelPost: function() {
+		onCancelPost: function(){
 			this.myNavBack("worklist");
 		}
 	});
