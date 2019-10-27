@@ -3,8 +3,7 @@ Demo App for UI5 ASE Training
 
 # Part 1 - Simple Formatter in TDD:
 
-1. Formats value of price with 2 numbers of digits after the decimal point.
-2. Formats [value state](https://sapui5.hana.ondemand.com/#/api/sap.ui.core.ValueState) of price: 
+1. Formats [value state](https://sapui5.hana.ondemand.com/#/api/sap.ui.core.ValueState) of price: 
 
    when price < 50, show Success state.
    
@@ -13,6 +12,7 @@ Demo App for UI5 ASE Training
    when 250 <= price < 2000, show Warning state.
    
    others, show Error state.
+2. Formats value of price with 2 numbers of digits after the decimal point.
    
    
  # (Optional)Part 2 - Date Formatter:
