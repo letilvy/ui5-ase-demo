@@ -1,0 +1,11 @@
+# Demo model for All-Pairs Training
+#
+
+Radio: 1,2,3
+Check1: 0,1
+Check2: 0,1
+Check3: 0,1
+Check4: 0,1
+
+Choices1: 1,2,3,4
+Choices2: 1,2,3
