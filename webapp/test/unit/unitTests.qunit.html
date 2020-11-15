@@ -22,12 +22,11 @@
 
 		QUnit.config.autostart = false;
 
-		sap.ui.require(
-				["test/unit/allTests"],
-				function() {
-					QUnit.start();
-				}
-		);
+		sap.ui.require([
+			"test/unit/allTests"
+		], function(){
+			QUnit.start();
+		});
 	</script>
 
 </head>
