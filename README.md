@@ -1,4 +1,4 @@
-# ui5asedemo - Formatter
+# Formatter
 Demo App for UI5 ASE Training
 
 # Part 1 - Simple Formatter in TDD:
