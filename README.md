@@ -10,13 +10,19 @@
 	
 	b. If there is no item in table, then the title should display 'Posts', not 'Posts (0)'
 
+ ### 2. Enhance table title (Exercise)       
+
+	Suppose table has been changed to single select mode:
+	
+	a. When there is no selected item, then title should act like behaviors in DEMO
+	
+	b. When there is selected item, then there should always be a suffix “ - Item Selected” after the existing title text.
+	
+	c. Given title is displayed with a suffix “ - Item Selected”, when user click the More button of the table, then the title should not be changed
 
 
 
-
-
-
-### 2. Implement send email function
+### 3. Implement send email function
 
 	a. Selected items from table should be listed in email as message body:
 	
