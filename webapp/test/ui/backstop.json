@@ -9,33 +9,33 @@
             "label": "tablet",
             "width": 960,
             "height": 540
+        },{
+            "label": "mobile",
+            "width": 375,
+            "height": 667
         }
     ],
     "scenarios": [
         {
             "label": "Worklist",
-            "cookiePath": "backstop_data/engine_scripts/cookies.json",
-            "url": "http://localhost:1919/ui5-ase-demo/webapp/test/mockServer.html",
+            "url": "http://localhost:1919/training/ui5-ase-demo/webapp/test/mockServer.html",
             "delay": 1000,
             "postInteractionWait": 1000,
-            "misMatchThreshold" : 0.1,
-            "scrollToSelector": "header[class*=sapMeHomeHeader][id*=header2]",
-            "readySelector": "div[id*=kpi0]"
+            "misMatchThreshold": 0.1,
+            "readySelector": "td[class*=sapMListTblHighlightCell]"
         },{
             "label": "Post",
-            "cookiePath": "backstop_data/engine_scripts/cookies.json",
-            "url": "http://localhost:1919/ui5-ase-demo/webapp/test/mockServer.html#/Post/PostID_1",
+            "url": "http://localhost:1919/training/ui5-ase-demo/webapp/test/mockServer.html#/Post/PostID_1",
             "delay": 1000,
             "postInteractionWait": 1000,
-            "misMatchThreshold" : 0.1,
-            "clickSelector": "div[id*='__kpi0-__']"
+            "misMatchThreshold": 0.1,
+            "readySelector": "span[class*=sapMObjectNumberText]"
         }
     ],
 
     "paths": {
         "bitmaps_reference": "backstop_data/bitmaps_reference",
         "bitmaps_test": "backstop_data/bitmaps_test",
-        "engine_scripts": "backstop_data/engine_scripts",
         "html_report": "backstop_data/html_report",
         "ci_report": "backstop_data/ci_report"
     },
