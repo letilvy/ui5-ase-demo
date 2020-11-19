@@ -18,14 +18,14 @@
     "scenarios": [
         {
             "label": "Worklist",
-            "url": "http://localhost:1919/training/ui5-ase-demo/webapp/test/mockServer.html",
+            "url": "http://localhost:1919/ui5-ase-demo/webapp/test/mockServer.html",
             "delay": 1000,
             "postInteractionWait": 1000,
             "misMatchThreshold": 0.1,
             "readySelector": "td[class*=sapMListTblHighlightCell]"
         },{
             "label": "Post",
-            "url": "http://localhost:1919/training/ui5-ase-demo/webapp/test/mockServer.html#/Post/PostID_1",
+            "url": "http://localhost:1919/ui5-ase-demo/webapp/test/mockServer.html#/Post/PostID_1",
             "delay": 1000,
             "postInteractionWait": 1000,
             "misMatchThreshold": 0.1,
