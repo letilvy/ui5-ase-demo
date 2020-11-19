@@ -17,6 +17,7 @@
 	a. When there is no selected item, then title should act like behaviors in DEMO
 	
 	b. When there is selected item, then there should always be a suffix “ - Item Selected” after the existing title text.
+![alt tag](https://github.com/letilvy/image-source/blob/main/worklist_item_selected.png)
 	
 	c. Given title is displayed with a suffix “ - Item Selected”, when user click the More button of the table, then the title should not be changed
 
