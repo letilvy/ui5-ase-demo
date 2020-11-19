@@ -36,4 +36,5 @@ You can check the report to see if there is any regression issue which is brough
 You can also refer to BackstopJS Github repository if you want to create new test case which make your change regression free.
 
 Since each BackstopJS test case has to restart the app then do the check, the performance of all test scenarios running is not so good. In case you only want to run part of the scenarios, you can pass a --filter=<scenarioLabelRegex> argument to just run scenarios matching your scenario label. For example, if you want to run only welcome page relative scenarios, you can use following command:
+ 
 $ backstop test --filter=Worklist
