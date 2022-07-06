@@ -8,14 +8,17 @@
 	<script id="sap-ui-bootstrap"
 			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 			data-sap-ui-resourceroots='{
-			"sap.ui.demo.bulletinboard.test": "../",
-			"sap.ui.demo.bulletinboard.app" : "../mockServer"
-		}'
+				"sap.ui.demo.bulletinboard.test": "../",
+				"sap.ui.demo.bulletinboard.app" : "../mockServer"
+			}'
 			data-sap-ui-frameOptions='deny'>
 	</script>
 
-
 	<script>
+		jQuery.sap.require("sap.ui.qunit.qunit-2-css");
+		jQuery.sap.require("sap.ui.thirdparty.qunit-2");
+		jQuery.sap.require("sap.ui.qunit.qunit-junit");
+
 		jQuery.sap.require("sap.ui.demo.bulletinboard.test.integration.AllJourneys");
 	</script>
 

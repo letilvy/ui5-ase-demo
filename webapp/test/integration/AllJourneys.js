@@ -1,10 +1,4 @@
-/*global QUnit*/
-
-jQuery.sap.require("sap.ui.qunit.qunit-2-css");
-jQuery.sap.require("sap.ui.thirdparty.qunit-2");
-jQuery.sap.require("sap.ui.qunit.qunit-junit");
 QUnit.config.autostart = false;
-
 
 sap.ui.require([
 	"sap/ui/test/Opa5",

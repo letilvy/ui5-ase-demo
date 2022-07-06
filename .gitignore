@@ -1,4 +1,5 @@
-
+node_modules
+package-lock.json
 UIAdaptation_index.html
 changes_preview.js
 sap-ui-cachebuster-info.json

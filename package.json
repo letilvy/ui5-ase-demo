@@ -1,0 +1,26 @@
+{
+  "name": "ui5-ase-demo",
+  "version": "1.0.0",
+  "author": "Xiaocheng Wei",
+  "description": "Demo App for UI5 ASE Training",
+  "scripts": {
+    
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "karma": "^6.3.17",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-cli": "^2.0.0",
+    "karma-coverage": "^2.2.0",
+    "karma-htmlfile-reporter": "^0.3.8",
+    "karma-junit-reporter": "^2.0.1",
+    "karma-qunit": "^4.1.2",
+    "karma-sinon": "^1.0.5",
+    "karma-spec-reporter": "^0.0.33",
+    "karma-ui5": "^2.4.0",
+    "npm-check-updates": "^12.5.3",
+    "puppeteer": "^13.5.1",
+    "qunit": "^2.18.0",
+    "sinon": "^13.0.1"
+  }
+}
