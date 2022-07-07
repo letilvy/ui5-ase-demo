@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "author": "Xiaocheng Wei",
   "description": "Demo App for UI5 ASE Training",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "dependencies": {},
   "devDependencies": {
     "karma": "^6.3.17",
