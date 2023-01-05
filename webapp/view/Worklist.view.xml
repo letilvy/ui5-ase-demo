@@ -13,7 +13,7 @@
 				class="sapUiResponsiveMargin"
 				growing="true"
 				items="{
-					path: '/Posts',
+					path: 'posts>/',
 					sorter: {
 						path: 'Title',
 						descending: false
@@ -47,25 +47,25 @@
 						press="onPress">
 						<cells>
 							<ObjectIdentifier
-								title="{Title}"/>
+								title="{posts>Title}"/>
 							<Text
-								text="{Category}"/>
+								text="{posts>Category}"/>
 							<ObjectNumber
 								number="{
-										path: 'Price',
+										path: 'posts>Price',
 										formatter: '.formatter.numberUnit'
 									}"
 								state="{
-										path: 'Price',
+										path: 'posts>Price',
 										formatter: '.formatter.priceState'
 									}"
-								unit="{Currency}"/>
+								unit="{posts>Currency}"/>
 							<ToggleButton
 								id="flaggedButton"
 								tooltip="{i18n>flaggedTooltip}"
 								icon="sap-icon://flag"
 								pressed="{
-										path: 'Flagged',
+										path: 'posts>Flagged',
 										type: '.types.flagged'
 									}"
 								class="sapUiMediumMarginBeginEnd"/>

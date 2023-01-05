@@ -7,7 +7,7 @@ sap.ui.define([
 	'sap/ui/demo/bulletinboard/model/FlaggedType',
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator"
-], function (BaseController, JSONModel, formatter, FlaggedType, Filter, FilterOperator) {
+], function(BaseController, JSONModel, formatter, FlaggedType, Filter, FilterOperator){
 	"use strict";
 
 	return BaseController.extend("sap.ui.demo.bulletinboard.controller.Worklist", {
@@ -25,7 +25,7 @@ sap.ui.define([
 		 * Called when the worklist controller is instantiated.
 		 * @public
 		 */
-		onInit: function () {
+		onInit: function(){
 			var oViewModel,
 				iOriginalBusyDelay,
 				oTable = this.byId("table");
@@ -47,10 +47,19 @@ sap.ui.define([
 			// Make sure, busy indication is showing immediately so there is no
 			// break after the busy indication for loading the view's meta data is
 			// ended (see promise 'oWhenMetadataIsLoaded' in AppController)
-			oTable.attachEventOnce("updateFinished", function () {
+			oTable.attachEventOnce("updateFinished", function(){
 				// Restore original busy indicator delay for worklist's table
 				oViewModel.setProperty("/tableBusyDelay", iOriginalBusyDelay);
 			});
+
+			const sURL = "/here/goes/your/serviceUrl/Posts";
+            jQuery.ajax(sURL, {
+                method: "GET",
+                contentType: "application/json",
+                success: (oData) => {
+                    this.getModel("posts").setData(oData || []);
+                }
+            });
 		},
 
 		/* =========================================================== */
@@ -110,7 +119,7 @@ sap.ui.define([
 		onPress: function (oEvent) {
 			this.getRouter().navTo("post", {
 				// The source is the list item that got pressed
-				postId: oEvent.getSource().getBindingContext().getProperty("PostID")
+				postId: oEvent.getSource().getBindingContext("posts").getProperty("PostID")
 			});
 
 		},

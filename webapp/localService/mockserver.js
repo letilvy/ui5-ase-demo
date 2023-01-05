@@ -14,8 +14,7 @@ sap.ui.define([
 		 * The local mock data in this folder is returned instead of the real data for testing.
 		 * @public
 		 */
-
-		init : function () {
+		init: function(){
 			var oUriParameters = jQuery.sap.getUriParameters(),
 				sJsonFilesUrl = jQuery.sap.getModulePath(_sJsonFilesModulePath),
 				sManifestUrl = jQuery.sap.getModulePath(_sAppModulePath + "manifest", ".json"),
@@ -39,6 +38,21 @@ sap.ui.define([
 				sMockdataBaseUrl : sJsonFilesUrl,
 				bGenerateMissingMockData : true
 			});
+
+			var aRequests = oMockServer.getRequests();
+
+			var sPostsJsonUrl = sJsonFilesUrl + "/Posts.json";
+			aRequests.push({
+				method: "GET",
+				path: new RegExp("Posts(.*)"),
+				response: function (oXhr, sEntity) {
+					var aPost = jQuery.sap.syncGetJSON(sPostsJsonUrl).data.d.results;
+					oXhr.respondJSON(200, {}, aPost);
+					return true;
+				}
+			});
+
+			oMockServer.setRequests(aRequests);
 
 			oMockServer.start();
 

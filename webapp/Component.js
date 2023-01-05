@@ -1,9 +1,9 @@
 sap.ui.define([
 	'sap/ui/core/UIComponent',
-	'sap/ui/model/resource/ResourceModel',
 	'sap/ui/demo/bulletinboard/model/models',
+	'sap/ui/model/json/JSONModel',
 	'sap/ui/Device'
-], function (UIComponent, ResourceModel, models, Device) {
+], function (UIComponent, models, JSONModel, Device){
 	"use strict";
 
 	return UIComponent.extend("sap.ui.demo.bulletinboard.Component", {
@@ -28,6 +28,9 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+
+			// set posts model
+			this.setModel(new JSONModel(), "posts");
 
 			// create the views based on the url/hash
 			this.getRouter().initialize();
