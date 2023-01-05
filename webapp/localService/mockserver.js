@@ -41,14 +41,23 @@ sap.ui.define([
 
 			var aRequests = oMockServer.getRequests();
 
-			var sPostsJsonUrl = sJsonFilesUrl + "/Posts.json";
+			var sPostsJsonUrl = sJsonFilesUrl + "/Posts.json",
+			oRegPostIdFilter = new RegExp("'(.*)'", "i");
 			aRequests.push({
 				method: "GET",
 				path: new RegExp("Posts(.*)"),
 				response: function (oXhr, sEntity) {
 					var aPost = jQuery.sap.syncGetJSON(sPostsJsonUrl).data.d.results;
-					oXhr.respondJSON(200, {}, aPost);
-					return true;
+					if(oRegPostIdFilter.test(sEntity)){
+						var sPostId = oRegPostIdFilter.exec(sEntity)[1];
+						oXhr.respondJSON(200, {}, {d: aPost.find((oPost)=>{
+							return oPost.PostID = sPostId;
+						})});
+						return true;	
+					}else{
+						oXhr.respondJSON(200, {}, aPost);
+						return true;
+					}
 				}
 			});
 
