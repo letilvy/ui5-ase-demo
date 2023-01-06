@@ -25,20 +25,20 @@
 					<Toolbar>
 						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
 						<ToolbarSpacer />
-						<SearchField id="searchField" width="auto" search="onFilterPosts" />
+						<SearchField id="searchField" width="auto" search="onFilterPosts"/>
 					</Toolbar>
 				</headerToolbar>
 				<columns>
-					<Column width="33%" id="nameColumn" vAlign="Middle">
+					<Column width="40%" id="nameColumn" vAlign="Middle">
 						<Text text="{i18n>TableNameColumnTitle}" id="nameColumnTitle"/>
 					</Column>
-					<Column width="33%" id="categoryColumn" vAlign="Middle">
+					<Column width="30%" id="categoryColumn" vAlign="Middle">
 						<Text text="{i18n>TableCategoryColumnTitle}" id="categoryColumnTitle"/>
 					</Column>
-					<Column width="33%" id="unitNumberColumn" hAlign="End" vAlign="Middle">
+					<Column width="15%" id="unitNumberColumn" hAlign="End" vAlign="Middle">
 						<Text text="{i18n>TableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
 					</Column>
-					<Column width="80px" id="flaggedColumn" demandPopin="true" vAlign="Middle"/>
+					<Column width="10%" id="flaggedColumn" demandPopin="true" vAlign="Middle"/>
 				</columns>
 				<items>
 					<ColumnListItem

@@ -14,12 +14,12 @@
 		<semantic:content>
 			<ObjectHeader
 					id="objectHeader"
-					title="{Title}"
+					title="{post>/Title}"
 					number="{
-						path: 'Price',
+						path: 'post>/Price',
 						formatter: '.formatter.numberUnit'
 					}"
-					numberUnit="{Currency}"
+					numberUnit="{post>/Currency}"
 					backgroundDesign="Translucent">
 			</ObjectHeader>
 			<IconTabBar id="iconTabBar"
@@ -31,16 +31,16 @@
 							<form:content>
 								<Label text="{i18n>postDateLabel}"/>
 								<Text text="{
-									path: 'Timestamp',
+									path: 'post>/Timestamp',
 									formatter: '.formatter.date'
 								}"/>
 								<Label text="{i18n>postDescriptionLabel}"/>
-								<Text text="{Description}"/>
+								<Text text="{post>/Description}"/>
 							</form:content>
 						</form:SimpleForm>
 					</IconTabFilter>
 					<IconTabFilter icon="sap-icon://inspection" key="statistics">
-						<Text text="Viewed 55555 times" id="viewCounter"/>
+						<Text text="Viewed 55555 times" id="viewCounter" class="sapUiSmallMarginTopBottom sapUiLargeMarginBegin"/>
 					</IconTabFilter>
 				</items>
 			</IconTabBar>

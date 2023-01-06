@@ -45,7 +45,10 @@ sap.ui.define([
 		 * @param {Date} oDate the date of the property.
 		 * @returns {string} sValue the formatted date
 		 */
-		date: function(oDate) {
+		date: function(oDate){
+			if(typeof oDate === "string"){
+				var oDate = new Date(parseInt(oDate.substring(oDate.indexOf('(')+1, oDate.indexOf(')'))));
+			}
 			return new DateFormatter({ now: Date.now }).format(oDate);
 		}
 };

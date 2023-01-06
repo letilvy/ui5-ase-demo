@@ -50,9 +50,9 @@ sap.ui.define([
 					var aPost = jQuery.sap.syncGetJSON(sPostsJsonUrl).data.d.results;
 					if(oRegPostIdFilter.test(sEntity)){
 						var sPostId = oRegPostIdFilter.exec(sEntity)[1];
-						oXhr.respondJSON(200, {}, {d: aPost.find((oPost)=>{
-							return oPost.PostID = sPostId;
-						})});
+						oXhr.respondJSON(200, {}, aPost.find((oPost)=>{
+							return oPost.PostID === sPostId;
+						}));
 						return true;	
 					}else{
 						oXhr.respondJSON(200, {}, aPost);
