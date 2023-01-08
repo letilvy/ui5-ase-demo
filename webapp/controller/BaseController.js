@@ -33,7 +33,7 @@ sap.ui.define([
 		 * @returns {sap.ui.model.Model} the model instance
 		 */
 		getModel: function (sName) {
-			return this.getView().getModel(sName);
+			return this.getOwnerComponent().getModel(sName);
 		},
 
 		/**
@@ -44,7 +44,7 @@ sap.ui.define([
 		 * @returns {sap.ui.mvc.View} the view instance
 		 */
 		setModel: function (oModel, sName) {
-			return this.getView().setModel(oModel, sName);
+			return this.getOwnerComponent().setModel(oModel, sName);
 		},
 
 		/**

@@ -42,6 +42,7 @@ sap.ui.define([
 			var aRequests = oMockServer.getRequests();
 
 			var sPostsJsonUrl = sJsonFilesUrl + "/Posts.json",
+			oRegQueryFilter = new RegExp("q=(.*)$", "i"),
 			oRegPostIdFilter = new RegExp("'(.*)'", "i");
 			aRequests.push({
 				method: "GET",
@@ -53,11 +54,16 @@ sap.ui.define([
 						oXhr.respondJSON(200, {}, aPost.find((oPost)=>{
 							return oPost.PostID === sPostId;
 						}));
-						return true;	
+					}else if(oRegQueryFilter.test(sEntity)){
+						var sQuery = oRegQueryFilter.exec(sEntity)[1];
+						if(sQuery)
+							oXhr.respondJSON(200, {}, aPost.filter((oPost)=>{
+								return oPost.Title.toLowerCase().startsWith(sQuery.toLowerCase());
+							}));
 					}else{
 						oXhr.respondJSON(200, {}, aPost);
-						return true;
 					}
+					return true;
 				}
 			});
 

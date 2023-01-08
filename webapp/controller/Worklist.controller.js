@@ -44,6 +44,8 @@ sap.ui.define([
 			});
 			this.setModel(oViewModel, "worklistView");
 
+			this.setModel(new JSONModel({suggest: []}), "search");
+
 			// Make sure, busy indication is showing immediately so there is no
 			// break after the busy indication for loading the view's meta data is
 			// ended (see promise 'oWhenMetadataIsLoaded' in AppController)
@@ -109,6 +111,28 @@ sap.ui.define([
 			var oTable = this.getView().byId("table");
 			var oBinding = oTable.getBinding("items");
 			oBinding.filter(aFilter);
+		},
+
+		showSuggestionPopover: function(){
+			this.byId("searchField").suggest();
+		},
+
+		onSuggestPosts: function(oEvent){
+			return new Promise((resolve, reject) => {
+				const sURL = "/here/goes/your/serviceUrl/Posts";
+	            jQuery.ajax(sURL, {
+	                method: "GET",
+	                contentType: "application/json",
+	                data: { 
+						q: oEvent.getParameter("suggestValue")
+					},
+	                success: (oData) => {
+	                    this.getModel("search").setProperty("/suggest", oData || []);
+                    	this.showSuggestionPopover();
+	                    resolve(oData.length);
+	                }
+	            });
+			});
 		},
 
 		/**
