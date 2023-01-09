@@ -10,4 +10,4 @@ AC1: there is bug in this function. Please correct the bug and cover the functio
 AC2: refactor the controller of post creation page to make it more clean.
 
 ### Mockup
-![image](https://github.com/letilvy/ui5-ase-demo/blob/refactoring/mockup/post-create.png)
+![image](https://github.com/letilvy/ui5-ase-demo/blob/refactoring/mockup/post_create.jpg)
