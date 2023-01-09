@@ -1,6 +1,6 @@
 # Exercise: Controller Test
 ### User Story
-develop search suggestion function in TDD mode
+Develop search suggestion function in TDD mode
 
 ### Acceptance Criteria
 AC1: given I input term "xx" in search field, when there is post whose title start with "xx", then I should see the posts displayed in the suggestion popover of the search field.
