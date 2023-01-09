@@ -6,9 +6,15 @@
 	xmlns:semantic="sap.m.semantic">
 	<semantic:FullscreenPage id="page" title="{i18n>postCreateViewTitle}" navButtonPress="onNavBack" showNavButton="true">
 		<semantic:content>
-			<f:SimpleForm id="form_post_create" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
-				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="1"
-				columnsL="1" columnsM="1" singleContainerFullSize="false" class="sapUiForceWidthAuto sapUiLargeMarginBeginEnd sapUiLargeMarginTop">
+			<f:SimpleForm id="form_post_create" 
+				editable="true" 
+				layout="ResponsiveGridLayout" 
+				labelSpanXL="2" labelSpanL="2" labelSpanM="2" labelSpanS="12" 
+				adjustLabelSpan="false" 
+				emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="0" 
+				columnsXL="1" columnsL="1" columnsM="1" 
+				singleContainerFullSize="false" 
+				class="sapUiForceWidthAuto sapUiLargeMarginBeginEnd sapUiLargeMarginTop">
 				<f:content>
 					<Label text="{i18n>postNameLabel}"/>
 					<Input id="input_name" placeholder="{i18n>postNamePlaceholder}"/>
