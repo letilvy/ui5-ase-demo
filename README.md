@@ -9,7 +9,7 @@ AC2: given I input term "xx" in search field, when there is no post whose title 
 ### Mockup
 When you input 'car', then you should see two posts suggested as following:
 
-![image](https://github.com/letilvy/ui5-ase-demo/blob/tdd_exercise_search/requirement/suggestion.png)
+![image](https://github.com/letilvy/ui5-ase-demo/blob/tdd_exercise_search/mockup/suggestion.png)
    
 
 
