@@ -9,4 +9,6 @@ fioriHtmlRunner.html
 .*/fioriHtmlRunner.html
 visual_ext_index.html
 /webapp/visual_ext_index.html
+/webapp/test/ui/backstop_data
 /webapp/test/ui/backstop_data/*
+**/.DS_Store
