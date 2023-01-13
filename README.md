@@ -1,15 +1,18 @@
-# ui5asedemo - Gherkin
-Demo App for UI5 ASE Training
+# Exercise: Gherkin
 
-# Part 1 - Worklist
+### User Story 1: Worklist
+Test worklist page display via gherkin
 
-Scenario 1: See the table with amount of items
+### Acceptance Criteria
+AC1: See the table with amount of items
 
-Scenario 2: Expand all items by click \'More\' button
+AC2: Expand all items by click \'More\' button
 
 
-# Part 2 - Navigation
+### User Story 2: Navigation
+Test worklist page display via gherkin
 
+### Acceptance Criteria
 Navigate to Post details page by press item
 
 Back to worklist page by press back button
