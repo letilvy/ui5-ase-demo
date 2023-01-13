@@ -1,19 +1,25 @@
-# ui5asedemo - Gherkin
-Demo App for UI5 ASE Training
+# Exercise: Gherkin
 
-# Part 1 - Worklist
+### User Story 1: Worklist
+Test worklist page display via gherkin
 
-Scenario 1: See the table with amount of items
+### Acceptance Criteria
+AC1: given I start my app, when I look at the screen, then the title should display the total amount of items
 
-Scenario 2: Expand all items by click \'More\' button
+AC2: given I start my app, when I press on more data, then the table should display all entries
+### Mockup
+![image](https://github.com/letilvy/ui5-ase-demo/blob/gherkin/mockup/morebutton.png)
 
+### User Story 2: Navigation
+Test all navigations of app via gherkin
 
-# Part 2 - Navigation
+### Acceptance Criteria
+AC1: given I start my app, when I press on the item with the name "<POST_NAME>", then app should navigate to post detail page and title should display the name "<POST_NAME>".
 
-Navigate to Post details page by press item
+AC2: given I navigate to post detail page, when I press the back button, then I should navigate back to worklist page and see the table.
 
-Back to worklist page by press back button
+AC3: given I naviagte back from post detail page, when I press on the forward button of browser, then app should navigate to post detail page and title should display the name "<POST_NAME>".
 
-Navigate to Post details page by press browser forward button
-
-See view counter by press \'statistics\' tab
+AC4: given I open the post detail page, when I press on the tab "Statistics", then I should see the view counter.
+### Mockup
+![image](https://github.com/letilvy/ui5-ase-demo/blob/gherkin/mockup/navigation.png)
