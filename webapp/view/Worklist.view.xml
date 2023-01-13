@@ -28,16 +28,16 @@
 					</Toolbar>
 				</headerToolbar>
 				<columns>
-					<Column width="33%" id="nameColumn" vAlign="Middle">
+					<Column width="35%" id="nameColumn" vAlign="Middle">
 						<Text text="{i18n>TableNameColumnTitle}" id="nameColumnTitle"/>
 					</Column>
-					<Column width="33%" id="categoryColumn" vAlign="Middle">
+					<Column width="20%" id="categoryColumn" vAlign="Middle">
 						<Text text="{i18n>TableCategoryColumnTitle}" id="categoryColumnTitle"/>
 					</Column>
-					<Column width="33%" id="unitNumberColumn" hAlign="End" vAlign="Middle">
+					<Column width="30%" id="unitNumberColumn" hAlign="End" vAlign="Middle">
 						<Text text="{i18n>TableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
 					</Column>
-					<Column width="80px" id="flaggedColumn" demandPopin="true" vAlign="Middle"/>
+					<Column width="12%" id="flaggedColumn" demandPopin="true" vAlign="Middle"/>
 				</columns>
 				<items>
 					<ColumnListItem
